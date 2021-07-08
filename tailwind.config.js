@@ -6,11 +6,13 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
-      purpleCust: "var(--purple)",
-      purpleBgCust: "var(--purple-bg)",
-      purpleDarkCust: "var(--purple-dark)",
-      purpleLightCust: "var(--purple-light)",
-      purpleCardCust: "var(--purple-card)",
+      purpleCust: {
+        DEFAULT: "var(--purple)",
+        bg: "var(--purple-bg)",
+        dark: "var(--purple-dark)",
+        light: "var(--purple-light)",
+        card: "var(--purple-card)",
+      },
       orangeCust: "var(--orange)",
       purpleFontCust: "var(--purple-text)",
       white: "var(--light)",
@@ -21,6 +23,9 @@ module.exports = {
       lg: '1024px',
       xl: '1280px',
       '2xl': '1536px'
+    },
+    fontFamily: {
+      'display': ['Oswald'],
     },
     extend: {},
   },

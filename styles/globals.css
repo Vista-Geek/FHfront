@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap');
 :root {
   --purple: #6427bf;
   --purple-bg: #201536;
@@ -8,12 +9,16 @@
   --puple-text: #b47ff4;
   --light: #fafaff;
 }
+
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Oswald', sans-serif !important;
 }
 
 a {
@@ -21,6 +26,49 @@ a {
   text-decoration: none;
 }
 
+/* for firefox */
 * {
-  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--purple-dark) rgba(0, 0, 0, 0);
+}
+
+/* for non-firefox */
+::-webkit-scrollbar {
+  overflow: overlay;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  display: initial;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--purple-dark);
+  border-radius: 5px;
+}
+
+html,
+body,
+#__next {
+  background-color: var(--purple-bg);
+  height: 100%;
+  width: 100%;
+}
+
+#nprogress {
+  position: relative;
+  z-index: 9999999;
+}
+
+#nprogress .bar {
+  background: var(--orange) !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px var(--orange), 0 0 5px var(--orange) !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: var(--orange) !important;
+  border-left-color: var(--orange) !important;
 }
