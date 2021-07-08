@@ -27,6 +27,9 @@ module.exports = {
     fontFamily: {
       'display': ['Oswald'],
     },
+    minHeight: {
+      "380": "380px"
+    },
     extend: {
       backgroundImage: theme => ({
         'hero': "url('/images/hero.jpg')",
