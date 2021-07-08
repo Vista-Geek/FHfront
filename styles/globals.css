@@ -19,6 +19,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Oswald', sans-serif !important;
+  color: var(--light);
 }
 
 a {

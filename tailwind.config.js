@@ -27,7 +27,11 @@ module.exports = {
     fontFamily: {
       'display': ['Oswald'],
     },
-    extend: {},
+    extend: {
+      backgroundImage: theme => ({
+        'hero': "url('/images/hero.jpg')",
+      })
+    },
   },
   variants: {
     extend: {},

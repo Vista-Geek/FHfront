@@ -1,7 +1,2 @@
-import React from 'react';
-
-const login = () => {
-  return <div></div>;
-};
-
+import login from '@modules/login';
 export default login;
