@@ -11,7 +11,7 @@ export default function Home() {
         <h1 className="m-0 text-5xl sm:text-7xl text-center">
           Welcome to
           <Link href="/login">
-            <a className="hover:underline focus:underline active:underline text-blue-600 no-underline">
+            <a href="#" className="hover:underline focus:underline active:underline text-blue-600 no-underline">
               Fantasy House
             </a>
           </Link>
