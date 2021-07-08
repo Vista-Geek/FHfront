@@ -4,7 +4,7 @@ import React from 'react';
 interface LogoProps {
   width?: number;
   height?: number;
-  text?: 'text-xl' | 'text-2xl';
+  text?: 'text-xl' | 'text-2xl' | 'text-3xl';
   position?: 'justify-center' | 'justify-start' | 'justify-end' | 'justify-evenly';
   link?: boolean;
 }
