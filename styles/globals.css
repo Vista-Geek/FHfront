@@ -78,9 +78,3 @@ body,
   border-top-color: var(--orange) !important;
   border-left-color: var(--orange) !important;
 }
-
-/* utilities */
-
-.border-card {
-  @apply rounded-tl-2xl rounded-tr-md rounded-br-3xl rounded-bl-lg;
-}

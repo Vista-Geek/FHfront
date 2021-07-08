@@ -4,9 +4,6 @@ module.exports = {
   purge: ['./src/**/*.tsx', './public/index.html'],
   mode: 'jit',
   theme: {
-    borderRadius: {
-      fh: '0px 25px 0px 15px'
-    },
     colors: {
       ...colors,
       purpleCust: {
@@ -36,6 +33,10 @@ module.exports = {
     extend: {
       backgroundImage: theme => ({
         hero: "url('/images/hero.jpg')"
+      }),
+      borderRadius: theme => ({
+        fh: '0px 25px 0px 15px',
+        card: "15px 5px 30px 8px"
       })
     }
   },

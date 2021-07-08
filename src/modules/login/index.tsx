@@ -1,4 +1,4 @@
-import Main from '@components/Layout/Main';
+import Main from '@components/Main';
 import React from 'react';
 import Card from './Card';
 
