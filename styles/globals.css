@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --purple: #6427bf;
   --purple-bg: #201536;
@@ -56,6 +60,7 @@ body,
   width: 100%;
 }
 
+/* Nprogress */
 #nprogress {
   position: relative;
   z-index: 9999999;
@@ -72,4 +77,10 @@ body,
 #nprogress .spinner-icon {
   border-top-color: var(--orange) !important;
   border-left-color: var(--orange) !important;
+}
+
+/* utilities */
+
+.border-card {
+  @apply rounded-tl-2xl rounded-tr-md rounded-br-3xl rounded-bl-lg;
 }

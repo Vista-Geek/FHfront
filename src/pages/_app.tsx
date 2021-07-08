@@ -1,6 +1,6 @@
+import 'tailwindcss/tailwind.css';
 import '../../styles/globals.css'; //global styles
 import type { AppProps } from 'next/app';
-import 'tailwindcss/tailwind.css';
 import Layout from '@components/Layout/Layout';
 import Router from 'next/router';
 import NProgress from 'nprogress';
