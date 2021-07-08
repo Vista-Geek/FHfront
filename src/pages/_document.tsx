@@ -7,6 +7,10 @@ class MyDocument extends Document {
         <Head>
           <meta name="description" content="Fantasy House - Home" />
           <link rel="icon" href="/favicon.ico" />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css"
+          />
         </Head>
         <body className="my-body-class">
           <Main />
