@@ -12,9 +12,9 @@ module.exports = {
         dark: "var(--purple-dark)",
         light: "var(--purple-light)",
         card: "var(--purple-card)",
+        text: "var(--purple-text)",
       },
       orangeCust: "var(--orange)",
-      purpleFontCust: "var(--purple-text)",
       white: "var(--light)",
     },
     screens: {
