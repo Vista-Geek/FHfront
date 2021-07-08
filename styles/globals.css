@@ -1,9 +1,12 @@
 :root {
-  --blue: #18497b;
-  --lightblue: #83ccd5;
-  --red: #952938;
-  --dark: #281f1b;
-  --light: #f4fbfc;
+  --purple: #6427bf;
+  --purple-bg: #201536;
+  --purple-dark: #10091f;
+  --purple-light: #9254de;
+  --purple-card: #3a3449;
+  --orange: #ff5200;
+  --puple-text: #b47ff4;
+  --light: #fafaff;
 }
 html,
 body {

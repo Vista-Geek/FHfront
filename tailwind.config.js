@@ -6,10 +6,13 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
-      blueCust: "var(--blue)",
-      redCust: "var(--red)",
-      lightblueCust: "var(--lightblue)",
-      blackCust: "var(--dark)",
+      purpleCust: "var(--purple)",
+      purpleBgCust: "var(--purple-bg)",
+      purpleDarkCust: "var(--purple-dark)",
+      purpleLightCust: "var(--purple-light)",
+      purpleCardCust: "var(--purple-card)",
+      orangeCust: "var(--orange)",
+      purpleFontCust: "var(--purple-text)",
       white: "var(--light)",
     },
     screens: {
