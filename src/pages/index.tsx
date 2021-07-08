@@ -1,4 +1,4 @@
-import Main from '@components/Layout/Main';
+import Main from '@components/Main';
 import Head from 'next/head';
 import Link from 'next/link';
 
