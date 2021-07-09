@@ -15,6 +15,7 @@ module.exports = {
         text: 'var(--purple-text)'
       },
       orangeCust: 'var(--orange)',
+      blueCust: "var(--blue)",
       white: 'var(--light)'
     },
     screens: {
@@ -25,7 +26,8 @@ module.exports = {
       '2xl': '1536px'
     },
     fontFamily: {
-      display: ['Oswald']
+      display: ['Oswald'],
+      herbo: ['Heebo']
     },
     minHeight: {
       380: '380px'
