@@ -4,7 +4,7 @@ import React from 'react';
 interface LogoProps {
   width?: number;
   height?: number;
-  text?: 'text-xl' | 'text-2xl';
+  text?: 'text-xl' | 'text-2xl' | 'text-3xl';
   position?: 'justify-center' | 'justify-start' | 'justify-end' | 'justify-evenly';
   link?: boolean;
 }
@@ -27,7 +27,7 @@ const index: React.FC<LogoProps> = ({
             height={height}
             className="cursor-pointer"
           />
-          <span className={`ml-2 ${text} inline`}>Fantasy House</span>
+          <span className={`ml-2 ${text} inline`}>FantasyHouse</span>
         </a>
       </Link>
     ) : (
