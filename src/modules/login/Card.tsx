@@ -4,15 +4,21 @@ import Head from 'next/head';
 import Button from '@components/Buttons/Button';
 import Input from '@components/Inputs';
 import Image from 'next/image';
-const Card = () => {
+
+interface CardProps {
+  label: string;
+  authMode: 'Sign up' | 'Log In';
+}
+
+const Card: React.FC<CardProps> = ({ label, authMode }) => {
   return (
     <div className="bg-purpleCust-dark w-full min-h-380 mt-5 rounded-card text-center py-4">
       <Head>
-        <title>FantasyHouse | Login</title>
+        <title>FantasyHouse | {label}</title>
       </Head>
       <Logo position="justify-center" text="text-3xl" width={50} height={50} />
       <p className="mt-4">
-        <span className="text-xl">Log In</span>
+        <span className="text-xl">{label}</span>
       </p>
       <form action="" method="POST" className="font-herbo">
         <Input type="text" label="Username" id="username" />
@@ -20,12 +26,12 @@ const Card = () => {
         <div className="mt-8 ">
           {/* TODO:  dinamice title */}
           <Button type="submit" width="w-6/12" classnames="bg-purpleCust">
-            <span>Log In</span>
+            <span>{label}</span>
           </Button>
         </div>
         <div className="mt-14 mb-5">
           <Button
-            type="submit"
+            type="button"
             width="w-8/12"
             classnames="bg-blueCust flex justify-center items-center m-auto h-13"
           >
@@ -36,7 +42,7 @@ const Card = () => {
               height={38}
               className="cursor-pointer bg-blueCust"
             />
-            <span>Sign up with Discord</span>
+            <span>{authMode} with Discord</span>
           </Button>
         </div>
       </form>

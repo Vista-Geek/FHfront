@@ -3,16 +3,18 @@ interface ButtonProps {
   type: 'submit' | 'button';
   classnames?: string;
   width: string;
+  title?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
   type,
   children,
   classnames = '',
-  width = ''
+  width = '',
+  title
 }) => (
   <button type={type} className={`h-10 rounded-fh ${classnames} ${width}`}>
-    {children}
+    {title ? title : children}
   </button>
 );
 
