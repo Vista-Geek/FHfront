@@ -15,7 +15,7 @@ module.exports = {
         text: 'var(--purple-text)'
       },
       orangeCust: 'var(--orange)',
-      blueCust: "var(--blue)",
+      blueCust: 'var(--blue)',
       white: 'var(--light)'
     },
     screens: {
@@ -34,18 +34,16 @@ module.exports = {
     },
     extend: {
       backgroundImage: theme => ({
-        hero: "url('/images/hero.jpg')"
+        hero: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/hero.jpg')"
       }),
       borderRadius: theme => ({
         fh: '0px 25px 0px 15px',
-        card: "15px 5px 30px 8px"
+        card: '15px 5px 30px 8px'
       })
     }
   },
   variants: {
     extend: {}
   },
-  plugins: [
-    require('@tailwindcss/forms')
-  ]
+  plugins: [require('@tailwindcss/forms')]
 };
