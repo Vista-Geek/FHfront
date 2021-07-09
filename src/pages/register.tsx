@@ -1,2 +1,2 @@
-import Register from '@modules/login/Register';
+import Register from '@modules/Login/Register';
 export default Register;
