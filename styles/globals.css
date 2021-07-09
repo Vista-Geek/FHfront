@@ -82,5 +82,5 @@ body,
 /* utilities */
 
 .custom-input {
-  @apply rounded bg-purpleCust-dark border-2 focus:border focus:border-purpleCust-light border-purpleCust;
+  @apply rounded bg-purpleCust-dark border-2 focus:border-purpleCust-light border-purpleCust;
 }
