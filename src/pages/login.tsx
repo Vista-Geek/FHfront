@@ -1,2 +1,2 @@
-import login from '@modules/login';
-export default login;
+import Login from '@modules/login';
+export default Login;
