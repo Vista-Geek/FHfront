@@ -4,6 +4,7 @@ import Navbar from '@components/Navbar/Navbar';
 import React from 'react';
 import Card from './Card';
 
+
 const index = () => {
   const renderButRegister = () => <ButtonNavbar title="Sign Up" href="/register" />;
   return (

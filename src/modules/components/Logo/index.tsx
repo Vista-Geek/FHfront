@@ -19,7 +19,7 @@ const index: React.FC<LogoProps> = ({
   <div className="w-full">
     {link ? (
       <Link href="/">
-        <a className={`w-3/6 flex items-center ${position}`}>
+        <a className={`w-full flex items-center ${position}`}>
           <Image
             src="/images/logo.svg"
             alt="logo"
