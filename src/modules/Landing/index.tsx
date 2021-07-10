@@ -7,16 +7,8 @@ import React from 'react';
 export default function Landing() {
   const renderButRegister = () => (
     <div className="flex">
-      <ButtonNavbar
-        title="Log In"
-        href="/login"
-        styles="bg-transparent"
-      />
-      <ButtonNavbar
-        title="Sign Up"
-        href="/register"
-        styles="bg-purpleCust"
-      />
+      <ButtonNavbar title="Log In" href="/login" styles="bg-transparent" />
+      <ButtonNavbar title="Sign Up" href="/register" styles="bg-purpleCust" />
     </div>
   );
   return (
@@ -27,7 +19,7 @@ export default function Landing() {
           <title>Fantasy House - Buy your dream house</title>
         </Head>
         <div className="m-auto">
-          <p className="text-4xl text-center px-5 sm:px-24 md:px-40 max-w-3xl mb-12 text-white font-medium">
+          <p className="text-6xl text-center px-5 sm:px-24 md:px-40 max-w-6xl mb-12 text-white font-medium">
             Search and find your dream home, a place where you can plan your strategies
             and rest at easy.
           </p>
@@ -35,13 +27,13 @@ export default function Landing() {
             <div className="text-center w-64 sm:w-3/4 m-auto">
               <a
                 href="#"
-                className="bg-purpleCust py-2 px-14 m-8 block sm:inline text-white text-xl rounded-fh"
+                className="bg-purpleCust py-2 px-14 m-8 block sm:inline text-white text-2xl rounded-fh"
               >
                 Buy House
               </a>
               <a
                 href="#"
-                className="bg-orangeCust py-2 px-14 m-8 block sm:inline text-white text-xl rounded-fh"
+                className="bg-orangeCust py-2 px-14 m-8 block sm:inline text-white text-2xl rounded-fh"
               >
                 Sell House
               </a>
