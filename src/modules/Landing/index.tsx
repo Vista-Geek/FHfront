@@ -10,14 +10,12 @@ export default function Landing() {
       <ButtonNavbar
         title="Log In"
         href="/login"
-        styles="w-24 rounded"
-        rounded="rounded"
+        styles="w-24"
       />
       <ButtonNavbar
         title="Sign Up"
         href="/register"
-        styles="w-24 bg-purpleCust rounded"
-        rounded="rounded"
+        styles="w-24 bg-purpleCust"
       />
     </div>
   );
