@@ -12,7 +12,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ label, authMode }) => {
   return (
-    <div className="bg-purpleCust-dark w-full min-h-380 mt-5 rounded-card text-center py-4">
+    <div className="bg-purpleCust-dark w-full min-h-380 mt-5 rounded-card text-center py-4 sm:w-96">
       <Head>
         <title>FantasyHouse | {label}</title>
       </Head>
