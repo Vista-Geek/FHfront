@@ -9,10 +9,10 @@ interface AuthContentProps {
 
 const AuthContent: React.FC<AuthContentProps> = ({ children, order = false }) => (
   <Main>
-    <div className="sm:flex w-full sm:justify-center ">
-      <div className="sm:flex">
+    <div className="lg:flex w-full lg:justify-center ">
+      <div className="lg:flex">
         <div
-          className={`hidden sm:flex mx-11 justify-center items-center ${
+          className={`hidden  lg:flex mx-11 justify-center items-center ${
             order ? 'order-2' : ''
           }`}
         >
@@ -24,7 +24,7 @@ const AuthContent: React.FC<AuthContentProps> = ({ children, order = false }) =>
             className="cursor-pointer"
           />
         </div>
-        <div className="sm:mx-11">{children}</div>
+        <div className="lg:mx-11 sm:flex sm:justify-center">{children}</div>
       </div>
     </div>
   </Main>

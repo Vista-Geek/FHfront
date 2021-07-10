@@ -16,20 +16,22 @@ const index: React.FC<LogoProps> = ({
   position = 'justify-start',
   link = false
 }) => (
-  <div className="w-full">
+  <div className="w-full flex">
     {link ? (
-      <Link href="/">
-        <a className={`w-full flex items-center ${position}`}>
-          <Image
-            src="/images/logo.svg"
-            alt="logo"
-            width={width}
-            height={height}
-            className="cursor-pointer"
-          />
-          <span className={`ml-2 ${text} inline`}>FantasyHouse</span>
-        </a>
-      </Link>
+      <>
+        <Link href="/">
+          <a className={`flex items-center ${position}`}>
+            <Image
+              src="/images/logo.svg"
+              alt="logo"
+              width={width}
+              height={height}
+              className="cursor-pointer"
+            />
+          </a>
+        </Link>
+        <span className={`ml-2 ${text} sm:text-3xl flex justify-center items-center`}>FantasyHouse</span>
+      </>
     ) : (
       <a className={`w-full flex items-center ${position}`}>
         <Image
