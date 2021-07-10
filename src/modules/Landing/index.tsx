@@ -7,8 +7,18 @@ import React from 'react';
 export default function Landing() {
   const renderButRegister = () => (
     <div className="flex">
-      <ButtonNavbar title="Log In" href="/login" styles="w-20 rounded" />
-      <ButtonNavbar title="Sign Up" href="/register" styles="w-20 bg-purpleCust rounded" />
+      <ButtonNavbar
+        title="Log In"
+        href="/login"
+        styles="w-24 rounded"
+        rounded="rounded"
+      />
+      <ButtonNavbar
+        title="Sign Up"
+        href="/register"
+        styles="w-24 bg-purpleCust rounded"
+        rounded="rounded"
+      />
     </div>
   );
   return (

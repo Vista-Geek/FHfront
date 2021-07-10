@@ -4,6 +4,7 @@ interface ButtonProps {
   classnames?: string;
   width: string;
   title?: string;
+  rounded?: 'rounded-fh' | 'rounded';
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -11,9 +12,10 @@ const Button: React.FC<ButtonProps> = ({
   children,
   classnames = '',
   width = '',
-  title
+  title,
+  rounded = 'rounded-fh'
 }) => (
-  <button type={type} className={`h-10 rounded-fh ${classnames} ${width}`}>
+  <button type={type} className={`h-10 ${rounded} ${classnames} ${width}`}>
     {title ? title : children}
   </button>
 );
