@@ -9,3 +9,6 @@ _Theme colors have the suffix "Cust", this is very important for no rewrite defa
 ```bash
 blueCust: "var(--blue)"
 ```
+## Icons
+- React-Icons
+- Font Awesome

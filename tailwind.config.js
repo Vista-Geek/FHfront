@@ -39,6 +39,9 @@ module.exports = {
       borderRadius: theme => ({
         fh: '5px 10px 5px 10px',
         card: '15px 15px 15px 15px'
+      }),
+      borderWidth: theme => ({
+        "3": "3px"
       })
     }
   },
