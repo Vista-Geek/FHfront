@@ -37,8 +37,8 @@ module.exports = {
         hero: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/hero.jpg')"
       }),
       borderRadius: theme => ({
-        fh: '0px 25px 0px 15px',
-        card: '15px 5px 30px 8px'
+        fh: '5px 10px 5px 10px',
+        card: '15px 15px 15px 15px'
       })
     }
   },
