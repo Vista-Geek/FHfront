@@ -6,18 +6,17 @@ interface ButtonNavbarProps {
   title: string;
   href: string;
   styles?: string;
- // rounded: 'rounded-fh' | 'rounded';
 }
 
 const ButtonNavbar: React.FC<ButtonNavbarProps> = ({
   title,
   href,
-  styles = 'bg-purpleCust-light w-24',
+  styles = 'bg-purpleCust-light',
 
 }) => (
   <Button
     type="button"
-    width="w-full"
+    width="w-20 sm:w-36"
     classnames={`font-herbo ${styles}`}
     rounded="rounded"
   >

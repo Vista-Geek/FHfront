@@ -7,10 +7,12 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ RenderChildren }) => {
   return (
-    <nav className="absolute bg-purpleCust-dark w-full px-2 py-3 flex justify-between">
-      <Logo link />
-      <RenderChildren />
-    </nav>
+    <header className="absolute w-full bg-purpleCust-dark">
+      <nav className="sm:w-10/12 m-auto px-2 py-3 flex justify-between">
+        <Logo link />
+        <RenderChildren />
+      </nav>
+    </header>
   );
 };
 export default Navbar;
