@@ -19,7 +19,7 @@ export default function Landing() {
           <title>Fantasy House - Buy your dream house</title>
         </Head>
         <div className="m-auto">
-          <p className="text-3xl sm:text-6xl text-center px-5 sm:px-24 md:px-40 max-w-6xl mb-12 text-white font-medium">
+          <p className="text-4xl sm:text-6xl text-center px-5 sm:px-24 md:px-40 max-w-6xl mb-12 text-white font-medium">
             Search and find your dream home, a place where you can plan your strategies
             and rest at easy.
           </p>
