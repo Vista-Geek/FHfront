@@ -42,10 +42,13 @@ export default function ProductCard({
         />
       </div>
       <div className="px-2 pt-0 pb-2 sm:pt-3 sm:pb-0">
+        <span className="absolute top-3 right-3 bg-purpleCust-light text-xs p-2 rounded-md">
+          {productPrice} Gil
+        </span>
         <div>
           <h5
             className="font-display text-xl overflow-ellipsis overflow-hidden"
-            style={{ maxWidth: '200px', maxHeight: '60px' }}
+            style={{ maxWidth: '185px', maxHeight: '60px' }}
           >
             {productTitle}
           </h5>
