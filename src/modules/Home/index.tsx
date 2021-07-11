@@ -25,8 +25,8 @@ export default function Home() {
           <FilterColumn />
         </div>
         <div className="col-span-5 md:col-span-3">
-          <div className="flex">
-            <h3 className="text-right text-3xl">Sorty by</h3>
+          <div className="flex justify-end items-end">
+            <h3 className="text-3xl mr-4">Sorty by</h3>
             <select
               defaultValue="Newest"
               className="rounded-full bg-purpleCust-card text-lg h-8 w-40 py-0 border-none"
