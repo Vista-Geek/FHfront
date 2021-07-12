@@ -30,7 +30,9 @@ const index: React.FC<LogoProps> = ({
             />
           </a>
         </Link>
-        <span className={`ml-2 ${text} sm:text-3xl flex justify-center items-center`}>FantasyHouse</span>
+        <span className={`ml-2 ${text} sm:text-3xl flex justify-center items-center`}>
+          FantasyHouse
+        </span>
       </>
     ) : (
       <a className={`w-full flex items-center ${position}`}>
