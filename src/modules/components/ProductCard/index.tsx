@@ -31,26 +31,29 @@ export default function ProductCard({
   productFeatures
 }: Product) {
   return (
-    <div className="bg-purpleCust-card mb-8 pb-0 mx-2 flex-none sm:flex font-herbo rounded-lg relative">
-      <div className="w-full mb-0">
+    <div className="bg-purpleCust-card font-herbo mb-8 sm:h-card flex-none sm:flex mx-auto max-w-xs sm:max-w-full rounded-lg relative">
+      <div
+        className="sm:w-96 min-w-min relative"
+        style={{ height: '240px', maxHeight: '240px' }}
+      >
         <Image
           src={productImage}
           alt={productTitle}
-          className="rounded-t-lg sm:rounded-l-lg mb-0"
-          width="600px"
-          height="600px"
+          className="rounded-t-lg sm:rounded-none sm:rounded-l-lg"
+          objectFit="fill"
+          layout="fill"
         />
       </div>
-      <div className="px-2 pt-0 pb-2 sm:pt-3 sm:pb-0">
+      <div className="px-2 pt-2 pb-2 sm:pt-3 sm:pb-0">
         <span className="absolute top-3 right-3 bg-purpleCust-light text-xs p-2 rounded-md">
           {productPrice} Gil
         </span>
         <div>
           <h5
-            className="font-display text-xl overflow-ellipsis overflow-hidden"
-            style={{ maxWidth: '185px', maxHeight: '60px' }}
+            className="font-display text-xl hover:underline overflow-ellipsis overflow-hidden"
+            style={{ maxWidth: '220px', maxHeight: '60px' }}
           >
-            {productTitle}
+            <a href="#">{productTitle}</a>
           </h5>
           <span className="bg-orangeCust px-2 py-0 text-sm rounded-md">Sell-FC</span>
         </div>
