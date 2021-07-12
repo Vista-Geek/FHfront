@@ -16,7 +16,7 @@ const TabTitle: React.FC<TabTitleProps> = ({ tab, HandlerTab, title, currentTab 
     >
       <a
         className={
-          'dark:text-white text-base font-bold  py-3 rounded block leading-normal '
+          'dark:text-white text-base  py-3 px-2 rounded block leading-normal font-herbo font-normal'
         }
         onClick={e => {
           e.preventDefault();

@@ -16,10 +16,10 @@ interface FormProps {
 const Form: React.FC<FormProps> = ({
   InfoForm,
   handleSubmit,
-  title = 'Change Username',
+  title,
   titleHidden,
   descHidden = false,
-  desc = 'All of the fields on this page you can edited when you want.',
+  desc,
   children,
   titleButton
 }) => {
@@ -36,7 +36,8 @@ const Form: React.FC<FormProps> = ({
       }}
     >
       {!titleHidden && (
-        <h3 className="border-b border-purpleCust-light text-2xl">{title}</h3>
+        <h3 className="border-b border-purpleCust-light text-2xl sm:text-3xl font-display pb-2 font-bold">{title}</h3>
+        
       )}
       {InfoForm.map(input => (
         <Fragment key={input.id}>
@@ -48,16 +49,18 @@ const Form: React.FC<FormProps> = ({
         </Fragment>
       ))}
 
-      {!descHidden && <p className="my-4">{desc}</p>}
+      {!descHidden && <p className="my-4 ">{desc}</p>}
       {children ? (
         children
       ) : (
-        <Button
-          type="submit"
-          width="w-full"
-          title={titleButton}
-          classnames="bg-purpleCust my-4"
-        />
+        <div className="flex justify-end">
+          <Button
+            type="submit"
+            width="w-3/6"
+            title={titleButton}
+            classnames="bg-purpleCust my-4 self-end"
+          />
+        </div>
       )}
     </form>
   );
