@@ -8,7 +8,7 @@ interface TabsProps {
 const Tabs: React.FC<TabsProps> = ({ children }) => {
   const [openTab, setOpenTab] = useState(1);
   return (
-    <div className="flex flex-wrap mt-4">
+    <div className="flex flex-wrap">
       <div className="w-full">
         <ul className="flex mb-0 list-none flex-wrap pt-3 w-full pb-0" role="tablist">
           <TabTitle
