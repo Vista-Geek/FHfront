@@ -1,10 +1,11 @@
 import Form from '@components/Form/Form';
 import React from 'react';
+import { InfoForm } from '../../data/profile.form';
 
 const Edit = () => {
   return (
     <div>
-      <Form />
+      <Form InfoForm={InfoForm} />
     </div>
   );
 };
