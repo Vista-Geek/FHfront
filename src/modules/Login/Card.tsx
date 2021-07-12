@@ -2,8 +2,9 @@ import React from 'react';
 import Logo from '@components/Logo';
 import Head from 'next/head';
 import Button from '@components/Buttons/Button';
-import Input from '@components/Inputs';
 import Image from 'next/image';
+import Form from '@components/Form/Form';
+import { AuthData } from '../../data/auth.form';
 
 interface CardProps {
   label: string;
@@ -20,11 +21,14 @@ const Card: React.FC<CardProps> = ({ label, authMode }) => {
       <p className="mt-4">
         <span className="text-xl">{label}</span>
       </p>
-      <form action="" method="POST" className="font-herbo">
-        <Input type="text" label="Username" id="username" />
-        <Input type="password" label="Password" id="password" />
+      <Form
+        InfoForm={AuthData}
+        titleHidden
+        descHidden
+        handleSubmit={values => console.log(values)}
+      >
         <div className="mt-8 ">
-          {/* TODO:  dinamice title */}
+          {/* TODO:  dinamice title: done */}
           <Button type="submit" width="w-6/12" classnames="bg-purpleCust">
             <span>{label}</span>
           </Button>
@@ -45,7 +49,7 @@ const Card: React.FC<CardProps> = ({ label, authMode }) => {
             <span>{authMode} with Discord</span>
           </Button>
         </div>
-      </form>
+      </Form>
     </div>
   );
 };

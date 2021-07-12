@@ -7,9 +7,10 @@ interface FormProps {
   InfoForm: FormI;
   handleSubmit: (values: object) => void;
   titleHidden: boolean;
-  desHidden: boolean;
+  descHidden: boolean;
   title?: string;
   desc?: string;
+  titleButton?: string;
 }
 
 const Form: React.FC<FormProps> = ({
@@ -17,8 +18,10 @@ const Form: React.FC<FormProps> = ({
   handleSubmit,
   title = 'Change Username',
   titleHidden,
-  desHidden = false,
-  desc = 'All of the fields on this page you can edited when you want.'
+  descHidden = false,
+  desc = 'All of the fields on this page you can edited when you want.',
+  children,
+  titleButton
 }) => {
   //obtener valor inicial del formValues por medio del valor del prop InfoForm
   const valueKeys = InfoForm.reduce((acc, curr, val) => ({ [curr.id]: '', ...acc }), {});
@@ -26,7 +29,7 @@ const Form: React.FC<FormProps> = ({
   type KeysForm = keyof typeof values;
   return (
     <form
-      className="px-2"
+      className="px-2 font-herbo"
       onSubmit={e => {
         e.preventDefault();
         handleSubmit(values);
@@ -45,13 +48,17 @@ const Form: React.FC<FormProps> = ({
         </Fragment>
       ))}
 
-      {!desHidden && <p className="my-4">{desc}</p>}
-      <Button
-        type="submit"
-        width="w-full"
-        title="Update Profile"
-        classnames="bg-purpleCust my-4"
-      />
+      {!descHidden && <p className="my-4">{desc}</p>}
+      {children ? (
+        children
+      ) : (
+        <Button
+          type="submit"
+          width="w-full"
+          title={titleButton}
+          classnames="bg-purpleCust my-4"
+        />
+      )}
     </form>
   );
 };
