@@ -1,6 +1,8 @@
 import Navbar from '@components/Navbar/Navbar';
 import React from 'react';
 import CardProfile from './CardProfile';
+import Tabs from '@components/Tabs/TabProfile';
+import Edit from './Edit';
 
 const index = () => {
   return (
@@ -10,6 +12,10 @@ const index = () => {
         <div className="flex justify-center w-full">
           <CardProfile />
         </div>
+       <Tabs>
+          <Edit />
+          <Edit />
+       </Tabs>
       </div>
     </>
   );

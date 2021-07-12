@@ -1,14 +1,14 @@
 import React from 'react';
+import { InputI } from '@interfaces/Form.interface';
 
-interface InputProps {
-  type: 'password' | 'email' | 'text';
-  id: string;
-  label: string;
-  autocomplete?: boolean;
-}
-
-const Input: React.FC<InputProps> = ({ type, id, label, autocomplete = false }) => (
-  <div className="flex flex-col w-10/12 m-auto mt-4 text-left">
+const Input: React.FC<InputI> = ({
+  type,
+  id,
+  label,
+  autocomplete = false,
+  classnames = 'w-10/12'
+}) => (
+  <div className={`flex flex-col m-auto mt-4 text-left ${classnames}`}>
     <label htmlFor={id} className="mb-1">
       {label}
     </label>

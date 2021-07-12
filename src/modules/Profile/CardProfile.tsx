@@ -32,8 +32,8 @@ const CardProfile = () => {
           <Rating rating={4.5} />
         </div>
       </div>
-      <div className="flex pb-3 text-white px-8 text-sm">
-        <div className="flex-1 text-center mr-3 border-r pr-3 flex justify-start items-center">
+      <div className="flex pb-3 text-white px-8 text-sm mb-4">
+        <div className="flex-1 text-center mr-3 pr-3 flex justify-start items-center">
           <IoMdHome size={40} className="mr-2 text-purpleCust" />
           <span>
             Houses <p>5</p>
