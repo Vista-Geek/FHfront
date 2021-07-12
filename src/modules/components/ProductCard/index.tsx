@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Discord from '@images/discord-purple.svg';
+import Link from 'next/link';
 import Heart from '@images/heart.svg';
 
 interface Product {
@@ -18,6 +19,7 @@ interface Product {
     // la imagen será de tipo string con la DB
     avatar: any;
     discord: string;
+    isAuthor?: Boolean;
   };
   productPrice: number;
 }
@@ -31,7 +33,7 @@ export default function ProductCard({
   productFeatures
 }: Product) {
   return (
-    <div className="bg-purpleCust-card font-herbo mb-8 sm:h-card flex-none sm:flex mx-auto max-w-xs sm:max-w-full rounded-lg relative">
+    <div className="bg-purpleCust-card font-herbo mb-8 sm:h-card flex-none sm:flex mx-auto max-w-xs sm:max-w-full rounded-lg relative sm:h-[240px]">
       <div
         className="sm:w-96 min-w-min relative"
         style={{ height: '240px', maxHeight: '240px' }}
@@ -48,12 +50,22 @@ export default function ProductCard({
         <span className="absolute top-3 right-3 bg-purpleCust-light text-xs p-2 rounded-md">
           {productPrice} Gil
         </span>
+        {productAuthor.isAuthor && (
+          <span
+            className="absolute top-3 left-3 bg-purpleCust text-xs p-2 rounded-md hover:cursor-pointer"
+            title="Mark as sold"
+          >
+            ✏️
+          </span>
+        )}
         <div>
           <h5
             className="font-display text-xl hover:underline overflow-ellipsis overflow-hidden"
             style={{ maxWidth: '220px', maxHeight: '60px' }}
           >
-            <a href="#">{productTitle}</a>
+            <Link href="/">
+              <a>{productTitle}</a>
+            </Link>
           </h5>
           <span className="bg-orangeCust px-2 py-0 text-sm rounded-md">Sell-FC</span>
         </div>
@@ -68,30 +80,32 @@ export default function ProductCard({
         <div className="text-xs mb-16">
           <p>{productDescription}</p>
         </div>
-        <div className="text-xs absolute bottom-3">
-          <div className="flex content-between gap-2">
-            <div>
-              <div className="flex">
-                <Image
-                  src={productAuthor.avatar}
-                  alt={productAuthor.name}
-                  width="22px"
-                  height="22px"
-                  className="rounded-full"
-                />
-                <p>
-                  {productAuthor.name} ({productAuthor.stars}⭐️)
-                </p>
-              </div>
-              <div className="flex">
-                <Image src={Discord} alt="Discord Logo" width="18px" height="18px" />
-                <p>{productAuthor.discord}</p>
-              </div>
-            </div>
-            <span className="w-24 text-right">
-              <Image src={Heart} alt="heart" width="18px" height="18px" />
-            </span>
+        <div className="text-xs absolute bottom-3 sm:flex gap-5">
+          <div className="flex items-center">
+            <Image
+              src={productAuthor.avatar}
+              alt={productAuthor.name}
+              width="22px"
+              height="22px"
+              className="rounded-full"
+            />
+            <Link href="/">
+              <a>
+                {productAuthor.name} ({productAuthor.stars}⭐️)
+              </a>
+            </Link>
           </div>
+          <div className="flex items-center">
+            <Image src={Discord} alt="Discord Logo" width="18px" height="18px" />
+            <Link href="/">
+              <a>{productAuthor.discord}</a>
+            </Link>
+          </div>
+        </div>
+        <div className="absolute bottom-3 right-6">
+          <span className="w-24 text-right hover:cursor-pointer">
+            <Image src={Heart} alt="heart" width="22px" height="22px" />
+          </span>
         </div>
       </div>
     </div>

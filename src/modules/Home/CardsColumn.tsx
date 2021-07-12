@@ -38,7 +38,8 @@ export default function CardsColumn() {
         name: 'byRedHunter',
         stars: 3,
         avatar: fakeAvatar,
-        discord: 'Usuario#0000'
+        discord: 'Usuario#0000',
+        isAuthor: true
       },
       price: 16000000
     }

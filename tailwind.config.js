@@ -32,10 +32,6 @@ module.exports = {
     minHeight: {
       380: '380px'
     },
-    height: {
-      card: '240px',
-      imageCard: '300px'
-    },
     extend: {
       backgroundImage: theme => ({
         hero: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/hero.jpg')"

@@ -2,6 +2,7 @@ import ButtonNavbar from '@components/Buttons/ButtonNavbar';
 import Main from '@components/Main';
 import Navbar from '@components/Navbar/Navbar';
 import Head from 'next/head';
+import Link from 'next/link';
 import React from 'react';
 
 export default function Landing() {
@@ -25,12 +26,11 @@ export default function Landing() {
           </p>
           <div className="w-full sm:pt-4">
             <div className="text-center w-64 sm:w-3/4 m-auto">
-              <a
-                href="#"
-                className="text-xl sm:text-2xl bg-purpleCust py-2 px-14 m-8 block sm:inline text-white rounded-fh"
-              >
-                Buy House
-              </a>
+              <Link href="/home">
+                <a className="text-xl sm:text-2xl bg-purpleCust py-2 px-14 m-8 block sm:inline text-white rounded-fh">
+                  Buy House
+                </a>
+              </Link>
               <a
                 href="#"
                 className="text-xl sm:text-2xl bg-orangeCust py-2 px-14 m-8 block sm:inline text-white rounded-fh"

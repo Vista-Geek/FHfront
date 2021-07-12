@@ -29,11 +29,12 @@ export default function Home() {
             <h3 className="text-3xl mr-3 sm:mr-4">Sorty by</h3>
             <select
               defaultValue="Newest"
-              className="rounded bg-purpleCust text-lg h-8 w-40 py-0 border-none"
+              className="rounded bg-purpleCust text-md font-herbo h-8 w-48 py-0 border-none"
             >
               <option>Newest</option>
               <option>Oldest</option>
-              <option>Cheapest</option>
+              <option>Price (Low to High)</option>
+              <option>Price (High to Low)</option>
             </select>
           </div>
           <CardsColumn />
