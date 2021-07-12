@@ -2,6 +2,7 @@ import React from 'react';
 import ProductCard from '@components/ProductCard';
 
 import imagenNoFinal from '@images/bg-image.png';
+import imagenNoFinal2 from '@images/bg-image2.jpeg';
 import fakeAvatar from '@images/fakeAvatar.png';
 
 export default function CardsColumn() {
@@ -25,9 +26,8 @@ export default function CardsColumn() {
       price: 16000000
     },
     {
-      image: imagenNoFinal,
-      title:
-        'House title daosijdasddaosijdasddaosijdasddaosijdasd daosijdasddaosijdasddaosijdasddaosijdasd',
+      image: imagenNoFinal2,
+      title: 'Descriptive House title i like',
       description:
         'A brief description of the house, how it is, how many floors, approximate size. With a maximum of 3 lines.',
       features: {
@@ -38,7 +38,8 @@ export default function CardsColumn() {
         name: 'byRedHunter',
         stars: 3,
         avatar: fakeAvatar,
-        discord: 'Usuario#0000'
+        discord: 'Usuario#0000',
+        isAuthor: true
       },
       price: 16000000
     }
