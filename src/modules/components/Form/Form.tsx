@@ -36,8 +36,9 @@ const Form: React.FC<FormProps> = ({
       }}
     >
       {!titleHidden && (
-        <h3 className="border-b border-purpleCust-light text-2xl sm:text-3xl font-display pb-2 font-bold">{title}</h3>
-        
+        <h3 className="border-b border-purpleCust-light text-2xl sm:text-3xl font-display pb-2 font-bold">
+          {title}
+        </h3>
       )}
       {InfoForm.map(input => (
         <Fragment key={input.id}>
