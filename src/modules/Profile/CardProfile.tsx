@@ -4,7 +4,7 @@ import React from 'react';
 import { IoMdHome, IoLogoUsd, IoMdCamera } from 'react-icons/io/';
 const CardProfile = () => {
   return (
-    <div className="rounded-lg  overflow-hidden shadow-xl w-full sm:max-w-xs my-3 bg-purpleCust-card font-display">
+    <div className="rounded-lg  overflow-hidden shadow-xl w-full sm:max-w-sm my-3 bg-purpleCust-card font-display">
       <div className="relative">
         <img src="https://i.imgur.com/dYcYQ7E.png" className="w-full" />
         <label htmlFor="banner_file" className="cursor-pointer">

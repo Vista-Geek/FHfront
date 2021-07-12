@@ -87,3 +87,10 @@ body,
 .custom-input {
   @apply rounded bg-purpleCust-dark border-2 focus:border-purpleCust-light border-purpleCust;
 }
+
+.btn-blue {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+}
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
