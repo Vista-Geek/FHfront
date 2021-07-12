@@ -42,6 +42,9 @@ module.exports = {
       }),
       borderWidth: theme => ({
         "3": "3px"
+      }),
+      minWidth: theme => ({
+        "medium": "50%"
       })
     }
   },

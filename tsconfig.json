@@ -17,6 +17,7 @@
     "paths": {
       "@images/*": ["./public/images/*"],
       "@components/*": ["./src/modules/components/*"],
+      "@interfaces/*": ["./src/interfaces/*"],
       "@modules/*": ["./src/modules/*"],
     }
   },
