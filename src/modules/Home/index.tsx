@@ -26,10 +26,10 @@ export default function Home() {
         </div>
         <div className="col-span-5 md:col-span-3 mx-2">
           <div className="flex justify-end items-end">
-            <h3 className="text-3xl mr-3 sm:mr-4">Sorty by</h3>
+            <h3 className="text-3xl mr-3 sm:mr-4">Sort by</h3>
             <select
               defaultValue="Newest"
-              className="rounded bg-purpleCust text-md font-herbo h-8 w-48 py-0 border-none"
+              className="rounded bg-purpleCust text-md font-herbo h-8 w-40 py-0 border-none"
             >
               <option>Newest</option>
               <option>Oldest</option>
