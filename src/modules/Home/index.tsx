@@ -1,10 +1,10 @@
-import React from 'react';
-import Head from 'next/head';
-import ButtonNavbar from '@components/Buttons/ButtonNavbar';
-import Navbar from '@components/Navbar/Navbar';
+import React from "react";
+import Head from "next/head";
+import ButtonNavbar from "@components/Buttons/ButtonNavbar";
+import Navbar from "@components/Navbar/Navbar";
 
-import FilterColumn from './FilterColumn';
-import CardsColumn from './CardsColumn';
+import FilterColumn from "./FilterColumn";
+import CardsColumn from "./CardsColumn";
 
 export default function Home() {
   const renderButRegister = () => (

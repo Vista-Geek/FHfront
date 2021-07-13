@@ -1,16 +1,19 @@
-import React from 'react';
+import React from "react";
 
 interface CheckboxProps {
   filterTitle: string;
   filters: Array<string>;
 }
 
-export default function IndividualFilterType({ filterTitle, filters }: CheckboxProps) {
+export default function IndividualFilterType({
+  filterTitle,
+  filters,
+}: CheckboxProps) {
   return (
     <div className="mt-8">
       <h5 className="text-xl">{filterTitle}</h5>
       <div className="mt-3 grid grid-cols-2">
-        {filters.map((item, index) => (
+       {filters.map((item, index) => (
           <label className="inline-flex items-center text-lg" key={index}>
             <input
               type="checkbox"

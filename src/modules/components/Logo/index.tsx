@@ -1,20 +1,24 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 interface LogoProps {
   width?: number;
   height?: number;
-  text?: 'text-xl' | 'text-2xl' | 'text-3xl';
-  position?: 'justify-center' | 'justify-start' | 'justify-end' | 'justify-evenly';
+  text?: "text-xl" | "text-2xl" | "text-3xl";
+  position?:
+    | "justify-center"
+    | "justify-start"
+    | "justify-end"
+    | "justify-evenly";
   link?: boolean;
 }
 
 const index: React.FC<LogoProps> = ({
   width = 40,
   height = 40,
-  text = 'text-xl',
-  position = 'justify-start',
-  link = false
+  text = "text-xl",
+  position = "justify-start",
+  link = false,
 }) => (
   <div className="w-full flex">
     {link ? (
@@ -30,7 +34,9 @@ const index: React.FC<LogoProps> = ({
             />
           </a>
         </Link>
-        <span className={`ml-2 ${text} sm:text-3xl flex justify-center items-center`}>
+        <span
+          className={`ml-2 ${text} sm:text-3xl flex justify-center items-center`}
+        >
           FantasyHouse
         </span>
       </>

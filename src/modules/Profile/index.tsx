@@ -1,14 +1,14 @@
-import Navbar from '@components/Navbar/Navbar';
-import React from 'react';
-import { IoMdHeart } from 'react-icons/io';
-import CardProfile from './CardProfile';
-import Tabs from '@components/Tabs/TabProfile';
-import EditProfile from './EditProfile';
-import EditAccount from './EditAccount';
-import ButtonNavbar from '@components/Buttons/ButtonNavbar';
-import ProfileDropdown from '@components/DropDowns/ProfileDropdown';
-import Image from 'next/image';
-import Link from 'next/link';
+import Navbar from "@components/Navbar/Navbar";
+import React from "react";
+import { IoMdHeart } from "react-icons/io";
+import CardProfile from "./CardProfile";
+import Tabs from "@components/Tabs/TabProfile";
+import EditProfile from "./EditProfile";
+import EditAccount from "./EditAccount";
+import ButtonNavbar from "@components/Buttons/ButtonNavbar";
+import ProfileDropdown from "@components/DropDowns/ProfileDropdown";
+import Image from "next/image";
+import Link from "next/link";
 
 const index = () => {
   const renderChildren = () => (

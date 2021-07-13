@@ -1,11 +1,11 @@
-import Input from '@components/Inputs';
-import React, { Fragment } from 'react';
-import { FormI } from '@interfaces/Form.interface';
-import { useForm } from '../../../hooks/useForm';
-import Button from '@components/Buttons/Button';
+import Input from "@components/Inputs";
+import React, { Fragment } from "react";
+import { FormI } from "@interfaces/Form.interface";
+import { useForm } from "../../../hooks/useForm";
+import Button from "@components/Buttons/Button";
 interface FormProps {
   InfoForm: FormI;
-  handleSubmit: (values: object) => void;
+  handleSubmit: (values: Record<string, unknown>) => void;
   titleHidden: boolean;
   descHidden: boolean;
   title?: string;
@@ -21,16 +21,19 @@ const Form: React.FC<FormProps> = ({
   descHidden = false,
   desc,
   children,
-  titleButton
+  titleButton,
 }) => {
-  //obtener valor inicial del formValues por medio del valor del prop InfoForm
-  const valueKeys = InfoForm.reduce((acc, curr, val) => ({ [curr.id]: '', ...acc }), {});
+  // obtener valor inicial del formValues por medio del valor del prop InfoForm
+  const valueKeys = InfoForm.reduce(
+    (acc, curr, val) => ({ [curr.id]: "", ...acc }),
+    {}
+  );
   const { handleInputChange, values } = useForm(valueKeys);
   type KeysForm = keyof typeof values;
   return (
     <form
       className="px-2 font-herbo"
-      onSubmit={e => {
+      onSubmit={(e) => {
         e.preventDefault();
         handleSubmit(values);
       }}
@@ -40,7 +43,7 @@ const Form: React.FC<FormProps> = ({
           {title}
         </h3>
       )}
-      {InfoForm.map(input => (
+      {InfoForm.map((input) => (
         <Fragment key={input.id}>
           <Input
             {...input}

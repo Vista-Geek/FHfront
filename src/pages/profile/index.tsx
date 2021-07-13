@@ -1,3 +1,3 @@
-import Profile from '@modules/Profile';
+import Profile from "@modules/Profile";
 
 export default Profile;

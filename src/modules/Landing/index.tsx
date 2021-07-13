@@ -1,9 +1,9 @@
-import ButtonNavbar from '@components/Buttons/ButtonNavbar';
-import Main from '@components/Main';
-import Navbar from '@components/Navbar/Navbar';
-import Head from 'next/head';
-import Link from 'next/link';
-import React from 'react';
+import ButtonNavbar from "@components/Buttons/ButtonNavbar";
+import Main from "@components/Main";
+import Navbar from "@components/Navbar/Navbar";
+import Head from "next/head";
+import Link from "next/link";
+import React from "react";
 
 export default function Landing() {
   const renderButRegister = () => (
@@ -21,8 +21,8 @@ export default function Landing() {
         </Head>
         <div className="m-auto">
           <p className="text-4xl sm:text-6xl text-center px-5 sm:px-24 md:px-40 max-w-6xl mb-12 text-white font-medium">
-            Search and find your dream home, a place where you can plan your strategies
-            and rest at easy.
+            Search and find your dream home, a place where you can plan your
+            strategies and rest at easy.
           </p>
           <div className="w-full sm:pt-4">
             <div className="text-center w-64 sm:w-3/4 m-auto">
