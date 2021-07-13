@@ -5,12 +5,11 @@ import AuthContent from "./AuthContent";
 import Card from "./Card";
 
 const index = () => {
-  const renderButRegister = () => (
-    <ButtonNavbar title="Sign Up" href="/register" />
-  );
   return (
     <>
-      <Navbar RenderChildren={renderButRegister} />
+      <Navbar>
+        <ButtonNavbar title="Sign Up" href="/register" />
+      </Navbar>
       <AuthContent>
         <Card label="Log In" authMode="Log In" />
       </AuthContent>

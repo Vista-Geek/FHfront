@@ -6,15 +6,18 @@ import Link from "next/link";
 import React from "react";
 
 export default function Landing() {
-  const renderButRegister = () => (
-    <div className="flex">
-      <ButtonNavbar title="Log In" href="/login" styles="bg-transparent" />
-      <ButtonNavbar title="Sign Up" href="/register" styles="bg-purpleCust" />
-    </div>
-  );
   return (
     <>
-      <Navbar RenderChildren={renderButRegister} />
+      <Navbar>
+        <div className="flex">
+          <ButtonNavbar title="Log In" href="/login" styles="bg-transparent" />
+          <ButtonNavbar
+            title="Sign Up"
+            href="/register"
+            styles="bg-purpleCust"
+          />
+        </div>
+      </Navbar>
       <Main>
         <Head>
           <title>Fantasy House - Buy your dream house</title>
