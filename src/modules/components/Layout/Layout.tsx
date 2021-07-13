@@ -1,6 +1,6 @@
-import React from 'react';
-import Navbar from '@components/Navbar/Navbar';
-import Button from '@components/Buttons/Button';
+import React from "react";
+import Navbar from "@components/Navbar/Navbar";
+import Button from "@components/Buttons/Button";
 
 const Layout: React.FC = ({ children }) => {
   return (

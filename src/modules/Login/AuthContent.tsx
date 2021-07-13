@@ -1,19 +1,22 @@
-import Image from 'next/image';
-import Main from '@components/Main';
-import React from 'react';
+import Image from "next/image";
+import Main from "@components/Main";
+import React from "react";
 
 interface AuthContentProps {
   order?: boolean;
   children: React.ReactNode;
 }
 
-const AuthContent: React.FC<AuthContentProps> = ({ children, order = false }) => (
+const AuthContent: React.FC<AuthContentProps> = ({
+  children,
+  order = false,
+}) => (
   <Main>
     <div className="lg:flex w-full lg:justify-center ">
       <div className="lg:flex">
         <div
           className={`hidden  lg:flex mx-11 justify-center items-center ${
-            order ? 'order-2' : ''
+            order ? "order-2" : ""
           }`}
         >
           <Image

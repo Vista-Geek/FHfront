@@ -1,8 +1,8 @@
-import React from 'react';
-import Image from 'next/image';
-import Discord from '@images/discord-purple.svg';
-import Link from 'next/link';
-import Heart from '@images/heart.svg';
+import React from "react";
+import Image from "next/image";
+import Discord from "@images/discord-purple.svg";
+import Link from "next/link";
+import Heart from "@images/heart.svg";
 
 interface Product {
   // la imagen será de tipo string con la DB
@@ -19,7 +19,7 @@ interface Product {
     // la imagen será de tipo string con la DB
     avatar: any;
     discord: string;
-    isAuthor?: Boolean;
+    isAuthor?: boolean;
   };
   productPrice: number;
 }
@@ -30,13 +30,13 @@ export default function ProductCard({
   productDescription,
   productAuthor,
   productPrice,
-  productFeatures
+  productFeatures,
 }: Product) {
   return (
     <div className="bg-purpleCust-card font-herbo mb-8 sm:h-card flex-none sm:flex mx-auto max-w-xs sm:max-w-full rounded-lg relative sm:h-[240px]">
       <div
         className="sm:w-96 min-w-min relative"
-        style={{ height: '240px', maxHeight: '240px' }}
+        style={{ height: "240px", maxHeight: "240px" }}
       >
         <Image
           src={productImage}
@@ -61,17 +61,20 @@ export default function ProductCard({
         <div>
           <h5
             className="font-display text-xl hover:underline overflow-ellipsis overflow-hidden"
-            style={{ maxWidth: '220px', maxHeight: '60px' }}
+            style={{ maxWidth: "220px", maxHeight: "60px" }}
           >
             <Link href="/">
               <a>{productTitle}</a>
             </Link>
           </h5>
-          <span className="bg-orangeCust px-2 py-0 text-sm rounded-md">Sell-FC</span>
+          <span className="bg-orangeCust px-2 py-0 text-sm rounded-md">
+            Sell-FC
+          </span>
         </div>
         <div className="text-xs my-3">
           <p>
-            <span className="font-bold">Location:</span> {productFeatures.location}
+            <span className="font-bold">Location:</span>{" "}
+            {productFeatures.location}
           </p>
           <p>
             <span className="font-bold">Size:</span> {productFeatures.size}
@@ -96,7 +99,12 @@ export default function ProductCard({
             </Link>
           </div>
           <div className="flex items-center">
-            <Image src={Discord} alt="Discord Logo" width="18px" height="18px" />
+            <Image
+              src={Discord}
+              alt="Discord Logo"
+              width="18px"
+              height="18px"
+            />
             <Link href="/">
               <a>{productAuthor.discord}</a>
             </Link>
