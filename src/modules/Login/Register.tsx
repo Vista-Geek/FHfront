@@ -5,10 +5,11 @@ import Card from "./Card";
 import AuthContent from "./AuthContent";
 
 const Register = () => {
-  const renderButRegister = () => <ButtonNavbar title="Log In" href="/login" />;
   return (
     <>
-      <Navbar RenderChildren={renderButRegister} />
+      <Navbar>
+        <ButtonNavbar title="Log In" href="/login" />
+      </Navbar>
       <AuthContent order>
         <Card label="Register" authMode="Sign up" />
       </AuthContent>

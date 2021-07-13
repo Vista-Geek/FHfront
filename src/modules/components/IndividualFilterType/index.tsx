@@ -17,7 +17,7 @@ export default function IndividualFilterType({
           <label className="inline-flex items-center text-lg" key={index}>
             <input
               type="checkbox"
-              className="form-checkbox bg-purpleCust-bg text-purpleCust-textborder-purpleCust-text rounded p-2 focus:outline-none focus:ring-none
+              className="form-checkbox bg-purpleCust-bg text-purpleCust border-purpleCust rounded p-2 focus:outline-none focus:ring-none focus:shadow-none
               "
             />
             <span className="ml-2">{item}</span>
