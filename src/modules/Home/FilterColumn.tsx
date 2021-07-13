@@ -1,20 +1,25 @@
-import React from 'react';
-import IndividualFilterType from '@components/IndividualFilterType';
+import React from "react";
+import IndividualFilterType from "@components/IndividualFilterType";
 
 export default function FilterColumn() {
   const serverNames = [
-    'Balmung',
-    'Balmung',
-    'Balmung',
-    'Balmung',
-    'Brynhildr',
-    'Brynhildr',
-    'Brynhildr',
-    'Brynhildr'
+    "Balmung",
+    "Balmung",
+    "Balmung",
+    "Balmung",
+    "Brynhildr",
+    "Brynhildr",
+    "Brynhildr",
+    "Brynhildr",
   ];
-  const ubications = ['The Lavender Beds', 'The Mist', 'The Goblet', 'Shirogane'];
-  const size = ['Small', 'Medium', 'Large'];
-  const saleType = ['Free Company', 'Relocation'];
+  const ubications = [
+    "The Lavender Beds",
+    "The Mist",
+    "The Goblet",
+    "Shirogane",
+  ];
+  const size = ["Small", "Medium", "Large"];
+  const saleType = ["Free Company", "Relocation"];
 
   return (
     <div className="mt-8">

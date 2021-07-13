@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 interface ButtonProps {
-  type: 'submit' | 'button';
+  type: "submit" | "button";
   classnames?: string;
   width: string;
   title?: string;
-  rounded?: 'rounded-fh' | 'rounded';
+  rounded?: "rounded-fh" | "rounded";
 }
 
 const Button: React.FC<ButtonProps> = ({
   type,
   children,
-  classnames = '',
-  width = '',
+  classnames = "",
+  width = "",
   title,
-  rounded = 'rounded-fh'
+  rounded = "rounded-fh",
 }) => (
   <button type={type} className={`h-10 ${rounded} ${classnames} ${width}`}>
     {title ? title : children}

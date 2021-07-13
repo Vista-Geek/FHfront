@@ -1,14 +1,14 @@
-import React from 'react';
-import Logo from '@components/Logo';
-import Head from 'next/head';
-import Button from '@components/Buttons/Button';
-import Image from 'next/image';
-import Form from '@components/Form/Form';
-import { AuthData } from '../../data/auth.form';
+import React from "react";
+import Logo from "@components/Logo";
+import Head from "next/head";
+import Button from "@components/Buttons/Button";
+import Image from "next/image";
+import Form from "@components/Form/Form";
+import { AuthData } from "../../data/auth.form";
 
 interface CardProps {
   label: string;
-  authMode: 'Sign up' | 'Log In';
+  authMode: "Sign up" | "Log In";
 }
 
 const Card: React.FC<CardProps> = ({ label, authMode }) => {
@@ -25,10 +25,9 @@ const Card: React.FC<CardProps> = ({ label, authMode }) => {
         InfoForm={AuthData}
         titleHidden
         descHidden
-        handleSubmit={values => console.log(values)}
+        handleSubmit={(values) => console.log(values)}
       >
         <div className="mt-8 ">
-          {/* TODO:  dinamice title: done */}
           <Button type="submit" width="w-6/12" classnames="bg-purpleCust">
             <span>{label}</span>
           </Button>

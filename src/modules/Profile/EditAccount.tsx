@@ -1,6 +1,6 @@
-import Form from '@components/Form/Form';
-import React from 'react';
-import { ChangeUsername, ChangePassowrd } from '@data/profile.form';
+import Form from "@components/Form/Form";
+import React from "react";
+import { ChangeUsername, ChangePassowrd } from "@data/profile.form";
 
 const EditAccount = () => {
   return (
@@ -8,7 +8,7 @@ const EditAccount = () => {
       <div>
         <Form
           InfoForm={ChangeUsername}
-          handleSubmit={values => console.log(values)}
+          handleSubmit={(values) => console.log(values)}
           titleHidden={false}
           descHidden
           title="Change Username"
@@ -18,7 +18,7 @@ const EditAccount = () => {
       <div className="mt-7">
         <Form
           InfoForm={ChangePassowrd}
-          handleSubmit={values => console.log(values)}
+          handleSubmit={(values) => console.log(values)}
           titleHidden={false}
           descHidden
           title="Change Password"
