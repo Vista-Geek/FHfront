@@ -10,10 +10,20 @@ export default function IndividualFilterType({ filterTitle, filters }: CheckboxP
     <div className="mt-8">
       <h5 className="text-xl">{filterTitle}</h5>
       <div className="mt-3 grid grid-cols-2">
-        {filters.map((server, index) => (
+        {filters.map((item, index) => (
           <label className="inline-flex items-center text-lg" key={index}>
-            <input type="checkbox" className="form-checkbox text-purpleCust-text " />
-            <span className="ml-2">{server}</span>
+            <input
+              type="checkbox"
+              className="form-checkbox 
+                bg-purpleCust-bg 
+                text-purpleCust-text 
+                border-purpleCust-text
+                rounded
+                p-2
+                focus:outline-none focus:ring-none
+              "
+            />
+            <span className="ml-2">{item}</span>
           </label>
         ))}
       </div>
