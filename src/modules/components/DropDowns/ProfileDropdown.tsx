@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import React from 'react';
-import { IoMdHeart } from 'react-icons/io';
+import Image from "next/image";
+import React from "react";
+import { IoMdHeart } from "react-icons/io";
 const ProfileDropdown = () => {
   return (
     <div className="group inline-block relative sm:hidden">

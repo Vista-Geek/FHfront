@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import React from 'react';
-import Button from './Button';
+import Link from "next/link";
+import React from "react";
+import Button from "./Button";
 
 interface ButtonNavbarProps {
   title: string;
@@ -11,7 +11,7 @@ interface ButtonNavbarProps {
 const ButtonNavbar: React.FC<ButtonNavbarProps> = ({
   title,
   href,
-  styles = 'bg-purpleCust-light'
+  styles = "bg-purpleCust-light",
 }) => (
   <Button
     type="button"

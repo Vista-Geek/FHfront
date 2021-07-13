@@ -1,7 +1,7 @@
-import Rating from '@components/Rating/ProfileStar';
-//import Image from 'next/image';
-import React from 'react';
-import { IoMdHome, IoLogoUsd, IoMdCamera } from 'react-icons/io/';
+import Rating from "@components/Rating/ProfileStar";
+// import Image from 'next/image';
+import React from "react";
+import { IoMdHome, IoLogoUsd, IoMdCamera } from "react-icons/io/";
 const CardProfile = () => {
   return (
     <div className="rounded-lg  overflow-hidden shadow-xl w-full sm:max-w-sm my-3 bg-purpleCust-card font-display">

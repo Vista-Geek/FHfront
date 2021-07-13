@@ -1,7 +1,7 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent } from "react";
 
 export interface InputI {
-  type: 'password' | 'email' | 'text';
+  type: "password" | "email" | "text";
   id: string;
   label: string;
   autocomplete?: boolean;
@@ -11,7 +11,7 @@ export interface InputI {
 export interface InputHandler extends InputI {
   value: string;
   HandleInputChange: ({
-    target
+    target,
   }: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => void;
 }
 

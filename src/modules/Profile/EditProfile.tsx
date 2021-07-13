@@ -1,13 +1,13 @@
-import Form from '@components/Form/Form';
-import React from 'react';
-import { PublicProfile } from '@data/profile.form';
+import Form from "@components/Form/Form";
+import React from "react";
+import { PublicProfile } from "@data/profile.form";
 
 const Edit = () => {
   return (
     <div>
       <Form
         InfoForm={PublicProfile}
-        handleSubmit={values => console.log(values)}
+        handleSubmit={(values) => console.log(values)}
         titleHidden={false}
         descHidden={false}
         title="Public Profile"
