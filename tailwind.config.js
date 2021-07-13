@@ -41,10 +41,13 @@ module.exports = {
         card: '15px 15px 15px 15px'
       }),
       borderWidth: theme => ({
-        3: '3px'
+        "3": "3px"
       }),
       minWidth: theme => ({
-        medium: '50%'
+        "medium": "50%"
+      }),
+      maxHeight: theme => ({
+        "100": "26rem"
       })
     }
   },
