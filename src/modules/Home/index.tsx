@@ -1,21 +1,13 @@
 import React from "react";
 import Head from "next/head";
-import ButtonNavbar from "@components/Buttons/ButtonNavbar";
-import Navbar from "@components/Navbar/Navbar";
-
 import FilterColumn from "./FilterColumn";
 import CardsColumn from "./CardsColumn";
+import GlobalNavbar from "@components/Navbar/GlobalNavbar";
 
 export default function Home() {
-  const renderButRegister = () => (
-    <div className="flex">
-      <ButtonNavbar title="Log In" href="/login" styles="bg-transparent" />
-      <ButtonNavbar title="Sign Up" href="/register" styles="bg-purpleCust" />
-    </div>
-  );
   return (
     <>
-      <Navbar RenderChildren={renderButRegister} />
+      <GlobalNavbar />
       <Head>
         <title>FantasyHouse - Home</title>
       </Head>
