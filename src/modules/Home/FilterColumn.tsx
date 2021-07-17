@@ -2,15 +2,15 @@ import React from "react";
 import IndividualFilterType from "@components/IndividualFilterType";
 
 export default function FilterColumn() {
-  const serverNames = [
-    "Balmung",
-    "Balmung",
-    "Balmung",
+  const serversNames = [
     "Balmung",
     "Brynhildr",
-    "Brynhildr",
-    "Brynhildr",
-    "Brynhildr",
+    "Coeurl",
+    "Diabolos",
+    "Goblin",
+    "Malboro",
+    "Mateus",
+    "Zalera",
   ];
   const ubications = [
     "The Lavender Beds",
@@ -27,15 +27,16 @@ export default function FilterColumn() {
         defaultValue="Data Center"
         className="rounded-full bg-purpleCust-card text-lg h-8 w-40 py-0 border-none"
       >
-        <option>Data Center</option>
+        <option hidden>Data Center</option>
         <option>Éter</option>
         <option>Primal</option>
         <option>Crystal</option>
-        <option>Caos</option>
+        <option>Chaos</option>
         <option>Luz</option>
+        <option>No filter</option>
       </select>
 
-      <IndividualFilterType filterTitle="Servers" filters={serverNames} />
+      <IndividualFilterType filterTitle="Servers" filters={serversNames} />
       <IndividualFilterType filterTitle="Ubication" filters={ubications} />
       <IndividualFilterType filterTitle="Size" filters={size} />
       <IndividualFilterType filterTitle="Type of Sale" filters={saleType} />
