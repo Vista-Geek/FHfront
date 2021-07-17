@@ -5,10 +5,14 @@ import Tabs from "@components/Tabs/TabProfile";
 import EditProfile from "./EditProfile";
 import EditAccount from "./EditAccount";
 import MenuNavbar from "@components/Navbar/MenuNavbar";
+import Head from "next/head";
 
 const index = () => {
   return (
     <>
+      <Head>
+        <title>Fantasy House | Profile</title>
+      </Head>
       <Navbar>
         <MenuNavbar />
       </Navbar>
