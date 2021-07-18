@@ -1,21 +1,13 @@
 import React from "react";
-import Navbar from "@components/Navbar/Navbar";
-import Button from "@components/Buttons/Button";
+import GlobalNavbar from "@components/Navbar/GlobalNavbar";
+import Footer from "@components/Footer";
 
 const Layout: React.FC = ({ children }) => {
   return (
     <>
-      <Navbar
-        RenderChildren={() => (
-          <Button
-            type="button"
-            width="w-full"
-            classnames="bg-purpleCust-light w-24 font-herbo"
-            title="Sign up"
-          />
-        )}
-      />
+      <GlobalNavbar />
       {children}
+      <Footer />
     </>
   );
 };
