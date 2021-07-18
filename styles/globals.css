@@ -104,3 +104,37 @@ body,
 .btn-blue:hover {
   @apply bg-blue-700;
 }
+
+
+/* Custom */
+/* Radio Input (<LabelButton/>) */
+.radioInputCustom:checked + label {
+  background-color: var(--purple);
+}
+
+/* Flag Sharp (<Sell/>) */
+.flag-sharp {
+  position: relative;
+  height: 50px;
+  margin-left: 20px;
+  width: 80px;
+  background: var(--purple-text);
+  display: inline-block;
+  border-radius: 6px 6px 3px 3px;
+  background-image: url("@images/sharp.svg");
+  background-size: 50%;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+.flag-sharp:before {
+  border-top: 25px solid var(--purple-text);
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  content: "";
+  height: 0;
+  left: 0;
+  position: absolute;
+  bottom: -24px;
+  width: 0;
+}
+
