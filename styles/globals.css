@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;400&display=swap");
+@import "~react-image-gallery/styles/css/image-gallery.css";
 /* TAILWIND */
 @tailwind base;
 @tailwind components;
@@ -82,6 +83,15 @@ body,
   border-left-color: var(--orange) !important;
 }
 
+/* React Image Galery */
+.image-gallery-thumbnails .image-gallery-thumbnails-container {
+  text-align: left !important;
+}
+
+.image-gallery img{
+  border-radius: 5px !important;
+}
+
 /* utilities */
 
 .custom-input {
@@ -94,6 +104,7 @@ body,
 .btn-blue:hover {
   @apply bg-blue-700;
 }
+<<<<<<< HEAD
 
 /* Custom */
 /* Radio Input (<LabelButton/>) */
@@ -126,3 +137,5 @@ body,
   bottom: -24px;
   width: 0;
 }
+=======
+>>>>>>> 4560ed0b6f4fb984b6dec72d17bec5ba6961fabd
