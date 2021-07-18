@@ -45,6 +45,11 @@ module.exports = {
       }),
       minWidth: (theme) => ({
         medium: "50%",
+        50: "50%",
+      }),
+      maxWidth: (theme) => ({
+        40: "40%",
+        50: "50%",
       }),
       maxHeight: (theme) => ({
         100: "26rem",

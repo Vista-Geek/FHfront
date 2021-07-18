@@ -4,17 +4,23 @@ interface LabelButtonProps {
   itemName: string;
   customWidth?: string;
   inputName: string;
+  postData?(key: string, value: string): any;
 }
 
 export default function LabelButton({
   itemName,
   customWidth = "",
   inputName,
+  postData,
 }: LabelButtonProps) {
+  const addPostData = () => {
+    postData(inputName, itemName);
+  };
+
   return (
     <>
       <input
-        className="radioInputCustom hidden checked:bg-red-200"
+        className="radioInputCustom hidden"
         type="radio"
         name={inputName}
         value={itemName}
@@ -25,12 +31,11 @@ export default function LabelButton({
         className={`
           ${customWidth}
           relative
-          m-1
+          m-1 ml-0
           inline-block
           w-24
           sm:w-28
           h-10
-          checked:bg-red-200 
           bg-purpleCust-card 
           hover:bg-purpleCust
           font-herbo 
@@ -40,6 +45,7 @@ export default function LabelButton({
           text-center
           rounded-md
           `}
+        onClick={addPostData}
       >
         <span className="block px-4 py-3">{itemName}</span>
       </label>
