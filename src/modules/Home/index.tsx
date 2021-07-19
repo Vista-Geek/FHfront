@@ -9,7 +9,6 @@ import Layout from "@components/Layout/Layout";
 export default function Home() {
   return (
     <>
-      <GlobalNavbar />
       <Head>
         <title>FantasyHouse - Home</title>
       </Head>

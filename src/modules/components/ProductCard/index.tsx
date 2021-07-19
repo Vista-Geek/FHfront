@@ -1,59 +1,35 @@
 import React from "react";
 import Image from "next/image";
-import noImage from "@images/noimage.png";
 import Discord from "@images/discord-purple.svg";
 import Link from "next/link";
 import Heart from "@images/heart.svg";
+import { ProductI } from "@interfaces/Product.interface";
 
-interface Product {
-  // la imagen será de tipo string con la DB
-  productImage?: any;
-  productTitle: string;
-  productDescription: string;
-  productFeatures: {
-    location: string;
-    plotNumber: string;
-    size: string;
-    typeOfSale: string;
-  };
-  productAuthor: {
-    authorName: string;
-    stars: number;
-    // la imagen será de tipo string con la DB
-    avatar: any;
-    discord: string;
-    isAuthor?: boolean;
-  };
-  productPrice: number;
-}
-
-export default function ProductCard({
-  productImage = noImage,
-  productTitle,
-  productDescription,
-  productAuthor,
-  productPrice,
-  productFeatures,
-}: Product) {
+export default function Card({
+  image = "/images/noimage.png",
+  title,
+  description,
+  author,
+  price,
+  features,
+}: ProductI) {
   return (
     <div className="bg-purpleCust-card font-herbo mb-8 flex-none sm:flex mx-auto max-w-xs sm:max-w-full rounded-lg relative min-w-[264px] sm:h-[240px]">
       <div
         className="sm:w-96 min-w-[40%] sm:max-w-40 relative"
         style={{ height: "240px", maxHeight: "240px" }}
       >
-        <Image
-          src={productImage}
-          alt={productTitle}
-          className="rounded-t-lg sm:rounded-none sm:rounded-l-lg"
-          objectFit="fill"
-          layout="fill"
+        <img
+          src={image}
+          alt={title}
+          className="rounded-t-lg sm:rounded-none sm:rounded-l-lg h-full w-full"
         />
       </div>
       <div className="px-2 pt-2 pb-2 sm:pt-3 sm:pb-0 max-w-full sm:min-w-50">
         <span className="absolute top-3 right-3 bg-purpleCust-light text-xs p-2 rounded-md">
-          {productPrice} Gil
+          {price} Gil
         </span>
-        {productAuthor.isAuthor && (
+        {author.isAuthor && (
           <span
             className="absolute top-3 left-3 bg-purpleCust text-xs p-2 rounded-md hover:cursor-pointer"
             title="Mark as sold"
@@ -67,39 +43,39 @@ export default function ProductCard({
             style={{ maxHeight: "60px" }}
           >
             <Link href="/">
-              <a>{productTitle}</a>
+              <a>{title}</a>
             </Link>
           </h5>
           <span className="bg-orangeCust px-2 py-0 text-sm rounded-md">
-            Sell-{productFeatures.typeOfSale}
+            Sell-{features.typeOfSale}
           </span>
         </div>
         <div className="text-xs my-3">
           <p>
-            <span className="font-bold">Location:</span>{" "}
-            {productFeatures.location}, Plot {productFeatures.plotNumber}
+            <span className="font-bold">Location:</span>
+            {features.location}, Plot {features.plotNumber}
           </p>
           <p>
-            <span className="font-bold">Size:</span> {productFeatures.size}
+            <span className="font-bold">Size:</span> {features.size}
           </p>
         </div>
         <div className="text-xs mb-16">
           <p className="overflow-ellipsis overflow-hidden break-words max-h-12">
-            {productDescription}
+            {description}
           </p>
         </div>
         <div className="text-xs absolute bottom-3 sm:flex gap-5">
           <div className="flex items-center">
             <Image
-              src={productAuthor.avatar}
-              alt={productAuthor.authorName}
+              src={author.avatar}
+              alt={author.authorName}
               width="22px"
               height="22px"
               className="rounded-full"
             />
             <Link href="/">
               <a>
-                {productAuthor.authorName} ({productAuthor.stars}⭐️)
+                {author.authorName} ({author.stars}⭐️)
               </a>
             </Link>
           </div>
@@ -111,7 +87,7 @@ export default function ProductCard({
               height="18px"
             />
             <Link href="/">
-              <a>{productAuthor.discord}</a>
+              <a>{author.discord}</a>
             </Link>
           </div>
         </div>
