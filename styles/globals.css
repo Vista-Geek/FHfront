@@ -111,6 +111,11 @@ body,
   background-color: var(--purple);
 }
 
+/* inputs */
+.input-sells{
+  @apply shadow appearance-none border rounded w-full py-2 px-3 bg-purpleCust-bg sm:bg-purpleCust-dark text-white leading-tight border-purpleCust focus:border-purpleCust focus:outline-none; 
+}
+
 /* Flag Sharp (<Sell/>) */
 .flag-sharp {
   position: relative;

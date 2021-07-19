@@ -1,27 +1,26 @@
-import React from "react";
+import React, { useRef } from "react";
+import { ChangeEvent } from "react";
 
 interface LabelButtonProps {
   itemName: string;
   customWidth?: string;
   inputName: string;
-  postData?(key: string, value: string): any;
+  handleCustomInputChange: (name: string, value: unknown) => void;
 }
 
 export default function LabelButton({
   itemName,
   customWidth = "",
   inputName,
-  postData,
+  handleCustomInputChange,
 }: LabelButtonProps) {
-  const addPostData = () => {
-    postData(inputName, itemName);
-  };
-
+  const InputRef = useRef<HTMLInputElement>(null);
   return (
     <>
       <input
         className="radioInputCustom hidden"
         type="radio"
+        ref={InputRef}
         name={inputName}
         value={itemName}
         id={itemName}
@@ -45,7 +44,14 @@ export default function LabelButton({
           text-center
           rounded-md
           `}
-        onClick={addPostData}
+        onClick={() => {
+          if (InputRef.current) {
+            handleCustomInputChange(
+              InputRef.current.name,
+              InputRef.current.value
+            );
+          }
+        }}
       >
         <span className="block px-4 py-3">{itemName}</span>
       </label>

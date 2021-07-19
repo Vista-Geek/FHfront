@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import GlobalNavbar from "@components/Navbar/GlobalNavbar";
 import Label from "@components/Buttons/LabelButton";
@@ -7,9 +7,18 @@ import ProductCard from "@components/ProductCard";
 import HouseInfo from "./HouseInfo";
 // TEMPORAL
 import Discord from "@images/discord-purple.svg";
+import { useForm } from "../../hooks/useForm";
+import { SellForm } from "../../interfaces/Sell.interface";
+import {
+  DataCenters,
+  ServersNames,
+  TypeOfSale,
+  HouseSize,
+} from "../../interfaces/Sell.interface";
+import Button from "@components/Buttons/Button";
 
 export default function SellPage() {
-  const dataCenters = [
+  const dataCenters: DataCenters[] = [
     "Aether",
     "Chaos",
     "Crystal",
@@ -18,7 +27,7 @@ export default function SellPage() {
     "Korea",
   ];
 
-  const serversNames = [
+  const serversNames: ServersNames[] = [
     "Balmung",
     "Brynhildr",
     "Coeurl",
@@ -29,28 +38,39 @@ export default function SellPage() {
     "Zalera",
   ];
 
-  const typeOfSale = ["FC", "Relocation"];
-  const houseSize = ["Short", "Medium", "Large"];
+  const typeOfSale: TypeOfSale[] = ["FC", "Relocation"];
+  const houseSize: HouseSize[] = ["Short", "Medium", "Large"];
 
   /* Post Result things */
-  const [postResult, setPostResult] = useState({});
-  /*
-    Desde aquí pido disculpas por todo
-    lo que he tenido que hacer para pasar
-    los valores, pero es el método que
-    me salió mejor. 🙏
-  */
-  const postData = (key: string, value: string): any => {
-    const itemData = {
-      ...postResult,
-      [key]: value,
-    };
-    setPostResult(itemData);
+  const InitialStateForm: SellForm = {
+    dataCenter: "Aether",
+    serverName: "Coeurl",
+    description: "",
+    plotNumber: "",
+    location: "",
+    price: "",
+    title: "",
+    size: "Medium",
+    typeOfSale: "Relocation",
+    image: "/images/noimage.png",
   };
-  //
+
+  const { values, handleCustomInputChange, handleInputChange, reset } =
+    useForm(InitialStateForm);
+
+  useEffect(() => {
+    console.log(values);
+  }, [values]);
+
+  const processImage = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      const imageFile = event.target.files[0];
+      const imageUrl = URL.createObjectURL(imageFile);
+      handleCustomInputChange(event.target.name, imageUrl);
+    }
+  };
   return (
     <>
-      {console.log(postResult)}
       <GlobalNavbar />
       <Head>
         <title>FantasyHouse - Sell form</title>
@@ -61,25 +81,29 @@ export default function SellPage() {
             <h4 className="text-3xl mb-8">Create new post</h4>
             {/* Data Center */}
             <NewPostStep stepTitle="Data Center" stepSecondTitle="Select one">
-              {dataCenters.map((item, index) => (
-                <Label
-                  key={index}
-                  inputName="dataCenter"
-                  itemName={item}
-                  postData={postData}
-                />
-              ))}
+              <div className="grid grid-cols-3 gap-1 md:grid-cols-4">
+                {dataCenters.map((item, index) => (
+                  <Label
+                    key={index}
+                    inputName="dataCenter"
+                    itemName={item}
+                    handleCustomInputChange={handleCustomInputChange}
+                  />
+                ))}
+              </div>
             </NewPostStep>
             {/* Server */}
             <NewPostStep stepTitle="Server" stepSecondTitle="Select one">
-              {serversNames.map((item, index) => (
-                <Label
-                  key={index}
-                  inputName="serverName"
-                  itemName={item}
-                  postData={postData}
-                />
-              ))}
+              <div className="grid grid-cols-3 gap-1 md:grid-cols-4">
+                {serversNames.map((item, index) => (
+                  <Label
+                    key={index}
+                    inputName="serverName"
+                    itemName={item}
+                    handleCustomInputChange={handleCustomInputChange}
+                  />
+                ))}
+              </div>
             </NewPostStep>
             {/* House Info */}
             <NewPostStep
@@ -87,9 +111,11 @@ export default function SellPage() {
               stepSecondTitle="Complete all"
             >
               <HouseInfo
-                typeOfSale={typeOfSale}
+                typeOfSales={typeOfSale}
+                houseInfo={{ ...values }}
                 houseSize={houseSize}
-                postData={postData}
+                handleInputChange={handleInputChange}
+                handleCustomInputChange={handleCustomInputChange}
               />
             </NewPostStep>
             {/* Image */}
@@ -103,6 +129,8 @@ export default function SellPage() {
                   <input
                     type="file"
                     className="hidden"
+                    name="image"
+                    onChange={processImage}
                     accept="image/png, image/gif, image/jpeg"
                   />
                 </label>
@@ -112,24 +140,33 @@ export default function SellPage() {
             <NewPostStep
               stepTitle="Result Post"
               stepSecondTitle="Verify post info"
+              last
             >
-              <div className="absolute -left-1 pt-6">
+              <div className="absolute lg:left-16 left-10 pt-6">
                 <ProductCard
-                  productTitle={postResult.postTitle ?? ""}
-                  productDescription={postResult.postDescription ?? ""}
-                  productAuthor={{
+                  image={values.image}
+                  title={values.title}
+                  description={values.description}
+                  author={{
                     authorName: "Hugo",
                     stars: 3,
                     avatar: Discord,
                     discord: "Hugo#0000",
                   }}
-                  productFeatures={{
-                    location: postResult.location ?? "",
-                    plotNumber: postResult.plotNumber ?? "",
-                    size: postResult.houseSize ?? "",
-                    typeOfSale: postResult.typeOfSale ?? "",
+                  features={{
+                    location: values.location,
+                    plotNumber: values.plotNumber,
+                    size: values.size,
+                    typeOfSale: values.typeOfSale,
                   }}
-                  productPrice={postResult.postPrice ?? ""}
+                  price={Number(values.price)}
+                />
+                <Button
+                  title="Post"
+                  type="submit"
+                  width="w-2/6"
+                  classnames="bg-purpleCust-light"
+                  rounded="rounded"
                 />
               </div>
             </NewPostStep>

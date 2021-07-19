@@ -1,3 +1,4 @@
+import { HandleInputChangeType } from "@interfaces/general.interface";
 import { ChangeEvent, useState } from "react";
 
 export const useForm = <T>(initialState: T) => {
@@ -5,13 +6,17 @@ export const useForm = <T>(initialState: T) => {
 
   const reset = () => setValues(initialState);
 
-  const handleInputChange = ({
-    target,
-  }: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) =>
+  const handleInputChange = ({ target }: HandleInputChangeType) =>
     setValues({
       ...values,
       [target.name]: target.value,
     });
 
-  return { values, handleInputChange, reset };
+  const handleCustomInputChange = (name: string, value: unknown) => {
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+  return { values, handleInputChange, reset, handleCustomInputChange };
 };

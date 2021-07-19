@@ -1,14 +1,12 @@
 import React from "react";
 import ProductCard from "@components/ProductCard";
-
-import imagenNoFinal from "@images/bg-image.png";
-import imagenNoFinal2 from "@images/bg-image2.jpeg";
 import fakeAvatar from "@images/fakeAvatar.png";
+import { ProductI } from "@interfaces/Product.interface";
 
 export default function CardsColumn() {
-  const fakeCard = [
+  const fakeCard: ProductI[] = [
     {
-      image: imagenNoFinal,
+      image: "/images/bg-image.png",
       title:
         "House title daosijdasddaosijdasddaosijdasddaosijdasd daosijdasddaosijdasddaosijdasddaosijdasd",
       description:
@@ -16,9 +14,11 @@ export default function CardsColumn() {
       features: {
         location: "The Lavender Beds, Plot 15",
         size: "Medium",
+        plotNumber: "2",
+        typeOfSale: "FC",
       },
       author: {
-        name: "byRedHunter",
+        authorName: "byRedHunter",
         stars: 3,
         avatar: fakeAvatar,
         discord: "Usuario#0000",
@@ -26,16 +26,18 @@ export default function CardsColumn() {
       price: 16000000,
     },
     {
-      image: imagenNoFinal2,
+      image: "/images/bg-image2.jpeg",
       title: "Descriptive House title i like",
       description:
         "A brief description of the house, how it is, how many floors, approximate size. With a maximum of 3 lines.",
       features: {
         location: "The Lavender Beds, Plot 15",
         size: "Medium",
+        typeOfSale: "Relocation",
+        plotNumber: "2",
       },
       author: {
-        name: "byRedHunter",
+        authorName: "byRedHunter",
         stars: 3,
         avatar: fakeAvatar,
         discord: "Usuario#0000",
@@ -48,15 +50,7 @@ export default function CardsColumn() {
   return (
     <div className="mt-8">
       {fakeCard.map((item, index) => (
-        <ProductCard
-          key={index}
-          productImage={item.image}
-          productTitle={item.title}
-          productDescription={item.description}
-          productFeatures={item.features}
-          productAuthor={item.author}
-          productPrice={item.price}
-        />
+        <ProductCard key={index} {...item} />
       ))}
     </div>
   );

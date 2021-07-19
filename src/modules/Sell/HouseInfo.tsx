@@ -1,24 +1,31 @@
 import Label from "@components/Buttons/LabelButton";
 import HouseInfoSection from "./HouseInfoSection";
+import { SellForm } from "@interfaces/Sell.interface";
+import { HandleInputChangeType } from "@interfaces/general.interface";
 
 interface HouseInfoProps {
-  typeOfSale: Array<string>;
+  typeOfSales: Array<string>;
   houseSize: Array<string>;
-  postData?(key: string, value: string): any;
+  handleInputChange: (e: HandleInputChangeType) => void;
+  handleCustomInputChange: (name: string, value: unknown) => void;
+  houseInfo: SellForm;
 }
 
-export default function HouseInfo({
-  typeOfSale,
+export default function HouseInfoComponent({
+  typeOfSales,
   houseSize,
-  postData,
+  handleInputChange,
+  handleCustomInputChange,
+  houseInfo: {
+    title,
+    description,
+    location,
+    price,
+    typeOfSale,
+    plotNumber,
+    size,
+  },
 }: HouseInfoProps) {
-  const regularClasses =
-    "shadow appearance-none border rounded w-full py-2 px-3 bg-purpleCust-bg sm:bg-purpleCust-dark text-white leading-tight border-purpleCust focus:border-purpleCust focus:outline-none focus:shadow-outline ";
-
-  const addPostData = (inputName: string, content: string) => {
-    postData(inputName, content);
-  };
-
   // FAKE DATA
   const listOfSomething = ["uno", "dos", "tres"];
 
@@ -26,39 +33,44 @@ export default function HouseInfo({
     <div className="mt-8 font-herbo">
       <HouseInfoSection labelFor="title" labelTitle="Title">
         <input
-          className={regularClasses}
+          className="input-sells"
           id="title"
           type="text"
           placeholder="Your post title"
-          onChange={(e) => addPostData("postTitle", e.target.value)}
+          name="title"
+          value={title}
+          onChange={handleInputChange}
         />
       </HouseInfoSection>
       <HouseInfoSection labelFor="price" labelTitle="Price">
         <input
-          className={regularClasses}
+          className="input-sells"
           id="price"
           type="number"
+          name="price"
           placeholder="House price"
-          onChange={(e) => addPostData("postPrice", e.target.value)}
+          value={price}
+          onChange={handleInputChange}
         />
       </HouseInfoSection>
       <HouseInfoSection labelFor="typeOfSale" labelTitle="Type of sale">
-        {typeOfSale.map((item, index) => (
+        {typeOfSales.map((item, index) => (
           <Label
             key={index}
             inputName="typeOfSale"
             itemName={item}
-            postData={() => addPostData("typeOfSale", item)}
+            handleCustomInputChange={handleCustomInputChange}
           />
         ))}
       </HouseInfoSection>
       <HouseInfoSection labelFor="location" labelTitle="Location">
         <select
-          defaultValue="Select one"
-          className={regularClasses}
-          onChange={(e) => addPostData("location", e.target.value)}
+          value={location}
+          className="input-sells"
+          name="location"
+          onChange={handleInputChange}
         >
-          <option hidden>Select one</option>
+          <option value="">Select one</option>
           {listOfSomething.map((option, index) => (
             <option key={index} value={option}>
               {option}
@@ -68,9 +80,10 @@ export default function HouseInfo({
       </HouseInfoSection>
       <HouseInfoSection labelFor="plotNumber" labelTitle="Plot Number">
         <select
-          defaultValue="Select one"
-          className={regularClasses}
-          onChange={(e) => addPostData("plotNumber", e.target.value)}
+          value={plotNumber}
+          className="input-sells"
+          name="plotNumber"
+          onChange={handleInputChange}
         >
           <option hidden>Select one</option>
           {listOfSomething.map((option, index) => (
@@ -86,7 +99,7 @@ export default function HouseInfo({
             key={index}
             inputName="size"
             itemName={item}
-            postData={() => addPostData("houseSize", item)}
+            handleCustomInputChange={handleCustomInputChange}
           />
         ))}
       </HouseInfoSection>
@@ -94,9 +107,10 @@ export default function HouseInfo({
         <textarea
           name="description"
           id="description"
+          value={description}
           // maxLength={}
-          className={regularClasses + "h-32"}
-          onChange={(e) => addPostData("postDescription", e.target.value)}
+          className="input-sells h-32"
+          onChange={handleInputChange}
         ></textarea>
       </HouseInfoSection>
     </div>
