@@ -8,10 +8,8 @@ const DiscordBanner = () => {
     <div className="w-full bg-blueCust relative">
       <div className="p-5 md:w-5/6 md:m-auto md:px-0 md:py-6 md:flex">
         <div className="md:w-4/6">
-          <h3 className="text-4xl w-5/6 mb-4 lg:text-5xl">
-            Community in Discord
-          </h3>
-          <p className="text-lg text-black font-semibold font-herbo lg:text-xl">
+          <h3 className="text-4xl w-5/6 mb-4">Community in Discord</h3>
+          <p className="text-lg text-black font-semibold font-herbo">
             Join the discord community and learn more about us. You will have a
             direct communication to buy your houses.
           </p>
