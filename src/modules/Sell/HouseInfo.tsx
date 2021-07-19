@@ -1,11 +1,11 @@
 import Label from "@components/Buttons/LabelButton";
 import HouseInfoSection from "./HouseInfoSection";
-import { SellForm } from "@interfaces/Sell.interface";
+import { SellForm, TypeOfSale, HouseSize } from "@interfaces/Sell.interface";
 import { HandleInputChangeType } from "@interfaces/general.interface";
 
 interface HouseInfoProps {
-  typeOfSales: Array<string>;
-  houseSize: Array<string>;
+  typeOfSales: TypeOfSale[];
+  houseSize: HouseSize[];
   handleInputChange: (e: HandleInputChangeType) => void;
   handleCustomInputChange: (name: string, value: unknown) => void;
   houseInfo: SellForm;
