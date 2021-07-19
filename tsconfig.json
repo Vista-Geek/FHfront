@@ -19,6 +19,7 @@
       "@components/*": ["./src/modules/components/*"],
       "@interfaces/*": ["./src/interfaces/*"],
       "@modules/*": ["./src/modules/*"],
+      "@hooks/*": ["./src/hooks/*"],
       "@data/*": ["./src/data/*"],
     }
   },
