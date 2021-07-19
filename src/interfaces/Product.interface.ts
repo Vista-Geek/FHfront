@@ -2,7 +2,7 @@ import { TypeOfSale, HouseSize } from "./Sell.interface";
 
 export interface ProductI {
   // la imagen será de tipo string con la DB
-  image: string ;
+  image: string;
   title: string;
   description: string;
   features: ProductFeatureI;

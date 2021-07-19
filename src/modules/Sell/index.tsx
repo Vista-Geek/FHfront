@@ -8,13 +8,13 @@ import HouseInfo from "./HouseInfo";
 // TEMPORAL
 import Discord from "@images/discord-purple.svg";
 import { useForm } from "../../hooks/useForm";
-import { SellForm } from "../../interfaces/Sell.interface";
 import {
   DataCenters,
   ServersNames,
   TypeOfSale,
   HouseSize,
-} from "../../interfaces/Sell.interface";
+  SellForm
+} from "@interfaces/Sell.interface";
 import Button from "@components/Buttons/Button";
 
 export default function SellPage() {
@@ -58,16 +58,17 @@ export default function SellPage() {
   const { values, handleCustomInputChange, handleInputChange, reset } =
     useForm(InitialStateForm);
 
-  useEffect(() => {
-    console.log(values);
-  }, [values]);
-
   const processImage = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
       const imageFile = event.target.files[0];
       const imageUrl = URL.createObjectURL(imageFile);
       handleCustomInputChange(event.target.name, imageUrl);
     }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(values);
   };
   return (
     <>
@@ -76,7 +77,10 @@ export default function SellPage() {
         <title>FantasyHouse - Sell form</title>
       </Head>
       <main className="p-5 pr-0 m-auto pt-24">
-        <form className="mx-auto w-[100%] sm:w-10/12 p-5 pb-64 md:px-10 bg-none md:bg-purpleCust-dark rounded-lg">
+        <form
+          className="mx-auto w-[100%] sm:w-10/12 p-5 pb-64 md:px-10 bg-none md:bg-purpleCust-dark rounded-lg"
+          onSubmit={(e) => handleSubmit(e)}
+        >
           <div className="sm:max-w-xl lg:max-w-xl mx-auto">
             <h4 className="text-3xl mb-8">Create new post</h4>
             {/* Data Center */}

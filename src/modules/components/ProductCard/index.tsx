@@ -3,7 +3,7 @@ import Image from "next/image";
 import Discord from "@images/discord-purple.svg";
 import Link from "next/link";
 import Heart from "@images/heart.svg";
-import {ProductI  } from "@interfaces/Product.interface";
+import { ProductI } from "@interfaces/Product.interface";
 
 export default function Card({
   image = "/images/noimage.png",
