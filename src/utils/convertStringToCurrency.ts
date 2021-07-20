@@ -1,7 +1,7 @@
-//custom function to transform house value
+// custom function to transform house value
 export const convertStringToCurrency = (currency: string) => {
-  let arr = currency.split("").reverse();
-  let newArray: string[] = [];
+  const arr = currency.split("").reverse();
+  const newArray: string[] = [];
   let count = 0;
   for (let index = 0; index < arr.length; index++) {
     newArray.push(arr[index]);
