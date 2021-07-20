@@ -12,7 +12,7 @@ export default function CardsColumn() {
       description:
         "A brief description of the house, how it is, how many floors, approximate size. With a maximum of 3 lines.",
       features: {
-        location: "The Lavender Beds, Plot 15",
+        location: "The Lavender Beds",
         size: "Medium",
         plotNumber: "2",
         typeOfSale: "FC",
@@ -31,7 +31,7 @@ export default function CardsColumn() {
       description:
         "A brief description of the house, how it is, how many floors, approximate size. With a maximum of 3 lines.",
       features: {
-        location: "The Lavender Beds, Plot 15",
+        location: "The Lavender Beds",
         size: "Medium",
         typeOfSale: "Relocation",
         plotNumber: "2",
