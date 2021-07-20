@@ -1,9 +1,10 @@
+import React from "react";
+import Image from "next/image";
+import ImageGallery from "react-image-gallery";
+import { IoMdHeart } from "react-icons/io";
 import Button from "@components/Buttons/Button";
 import Rating from "@components/Rating/ProfileStar";
-import Image from "next/image";
-import React from "react";
-import { IoMdHeart } from "react-icons/io";
-import ImageGallery from "react-image-gallery";
+import { convertStringToCurrency } from "@utils/convertStringToCurrency";
 
 const DetailsCard = () => {
   const images = [
@@ -62,7 +63,7 @@ const DetailsCard = () => {
             <Button
               type="button"
               width="w-28 md:w-32"
-              title="16000"
+              title={`${convertStringToCurrency("16000")} Gil`}
               classnames="bg-purpleCust-light"
               rounded="rounded"
             />
