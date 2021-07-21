@@ -9,12 +9,12 @@ const MenuNavbar = () => {
   return (
     <div className="flex justify-center items-center">
       <ButtonNavbar
-        href="/"
+        href="/home"
         title="Buy"
         styles="bg-opacity-0 border-b-2 border-purpleCust rounded-none mr-1"
       />
       <ButtonNavbar
-        href="/"
+        href="/sell"
         title="Sell"
         styles="bg-opacity-0  border-purpleCust rounded-none"
       />

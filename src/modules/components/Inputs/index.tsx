@@ -22,7 +22,6 @@ const Input: React.FC<InputHandler> = ({
       onChange={HandleInputChange}
       value={value}
       className="custom-input form-input transition-all"
-      autoFocus
       autoComplete={autocomplete ? "on" : "off"}
     />
   </div>
