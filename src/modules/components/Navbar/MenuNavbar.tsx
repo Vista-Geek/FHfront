@@ -90,6 +90,11 @@ const MenuNavbar = () => {
             </Link>
           </li>
           <li className="hover:text-purpleCust-text hover:font-semibold pt-8">
+            <Link href="/listings">
+              <a>My listings</a>
+            </Link>
+          </li>
+          <li className="hover:text-purpleCust-text hover:font-semibold pt-8">
             <Link href="/profile">
               <a>Profile</a>
             </Link>
