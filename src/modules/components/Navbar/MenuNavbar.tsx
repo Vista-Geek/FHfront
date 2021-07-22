@@ -31,7 +31,7 @@ const MenuNavbar = () => {
 
   return (
     <>
-      <div className="hidden sm:flex justify-center items-center">
+      <div className="hidden md:flex justify-center items-center">
         <ButtonNavbar
           href="/"
           title="Buy"
@@ -64,7 +64,7 @@ const MenuNavbar = () => {
           </Link>
         </div>
       </div>
-      <div className="sm:hidden">
+      <div className="md:hidden">
         <button onClick={toggleNav}>
           <i className="fas fa-bars text-2xl pt-1 px-2"></i>
         </button>
