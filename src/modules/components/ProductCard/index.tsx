@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Discord from "@images/discord-purple.svg";
+import { convertStringToCurrency } from "@utils/convertStringToCurrency";
 import Link from "next/link";
 import Heart from "@images/heart.svg";
 import { ProductI } from "@interfaces/Product.interface";
@@ -27,7 +28,7 @@ export default function Card({
       </div>
       <div className="px-2 pt-2 pb-2 sm:pt-3 sm:pb-0 max-w-full sm:min-w-50">
         <span className="absolute top-3 right-3 bg-purpleCust-light text-xs p-2 rounded-md">
-          {price} Gil
+          {convertStringToCurrency(price.toString())} Gil
         </span>
         {author.isAuthor && (
           <span
