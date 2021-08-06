@@ -15,10 +15,10 @@ export default function Card({
   features,
 }: ProductI) {
   return (
-    <div className="bg-purpleCust-card font-herbo mb-8 flex-none sm:flex mx-auto max-w-xs sm:max-w-full rounded-lg relative min-w-[264px] sm:h-[240px]">
+    <div className="bg-purpleCust-card font-herbo mb-8 flex-none sm:flex mx-auto max-w-xs sm:max-w-full rounded-lg relative min-w-[264px] sm:h-[260px]">
       <div
         className="sm:w-96 min-w-[40%] sm:max-w-40 relative"
-        style={{ height: "240px", maxHeight: "240px" }}
+        style={{ height: "260px", maxHeight: "260px" }}
       >
         <img
           src={image}
@@ -58,6 +58,9 @@ export default function Card({
           </p>
           <p>
             <span className="font-bold">Size:</span> {features.size}
+          </p>
+          <p>
+            <span className="font-bold">Server:</span> {features.server}
           </p>
         </div>
         <div className="text-xs mb-16">
