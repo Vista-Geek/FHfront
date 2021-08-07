@@ -14,6 +14,7 @@ export interface ProductFeatureI {
   location: string;
   plotNumber: string;
   size: HouseSize;
+  server: string;
   typeOfSale: TypeOfSale;
 }
 export interface ProductAuthorI {
