@@ -26,7 +26,7 @@ const index: React.FC<LogoProps> = ({
         <Link href="/">
           <a className={`flex items-center ${position}`}>
             <Image
-              src="/images/logo.svg"
+              src="/fhlogo.png"
               alt="logo"
               width={width}
               height={height}
