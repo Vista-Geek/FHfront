@@ -7,6 +7,7 @@ export interface SellForm {
   location: string;
   plotNumber: string;
   size: HouseSize;
+  server: string;
   description: string;
   image: string;
 }

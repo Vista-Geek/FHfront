@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.3.3",
+    "axios": "^0.21.1",
     "beauty-stars": "^1.1.0",
     "next": "11.0.1",
     "nprogress": "^0.2.0",

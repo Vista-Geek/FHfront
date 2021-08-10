@@ -15,7 +15,7 @@ const Footer = () => {
             <ul className="font-herbo text-purpleCust-text">
               <li>
                 <Link href="/home">
-                  <a className="hover:underline">By House</a>
+                  <a className="hover:underline">Buy House</a>
                 </Link>
               </li>
               <li>
