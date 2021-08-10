@@ -51,6 +51,7 @@ export default function SellPage() {
     price: "",
     title: "",
     size: "Medium",
+    server: "Balmung",
     typeOfSale: "Relocation",
     image: "/images/noimage.png",
   };
@@ -161,6 +162,7 @@ export default function SellPage() {
                       location: values.location,
                       plotNumber: values.plotNumber,
                       size: values.size,
+                      server: values.server,
                       typeOfSale: values.typeOfSale,
                     }}
                     price={Number(values.price)}
