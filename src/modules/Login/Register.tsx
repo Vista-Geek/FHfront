@@ -18,7 +18,7 @@ const Register = () => {
       <Navbar>
         <ButtonNavbar title="Register" href="/login" />
       </Navbar>
-      <Main>
+      <Main login>
         <div className="my-12">
           <div className="lg:flex">
             <div className="lg:mx-11 sm:flex sm:justify-center">
