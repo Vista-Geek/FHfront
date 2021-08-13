@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "fhfront",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -17,14 +17,17 @@
     "nprogress": "^0.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hook-form": "^7.12.2",
     "react-icons": "^4.2.0",
     "react-image-gallery": "^1.2.4",
+    "react-toastify": "^7.0.4",
     "zustand": "^3.5.7"
   },
   "devDependencies": {
     "@types/nprogress": "^0.2.0",
     "@types/react": "17.0.13",
     "@types/react-image-gallery": "^1.0.4",
+    "@types/react-toastify": "^4.1.0",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "autoprefixer": "^10.2.6",
     "eslint": "7.30.0",

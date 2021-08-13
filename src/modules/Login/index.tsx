@@ -1,6 +1,6 @@
+import React from "react";
 import ButtonNavbar from "@components/Buttons/ButtonNavbar";
 import Navbar from "@components/Navbar/Navbar";
-import React from "react";
 import AuthContent from "./AuthContent";
 import Card from "./Card";
 

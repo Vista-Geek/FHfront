@@ -21,6 +21,7 @@
       "@modules/*": ["./src/modules/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@data/*": ["./src/data/*"],
+      "@global-stores/*": ["./src/global-stores/*"],
       "@utils/*": ["./src/utils/*"],
     }
   },
