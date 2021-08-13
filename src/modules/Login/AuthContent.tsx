@@ -11,7 +11,7 @@ const AuthContent: React.FC<AuthContentProps> = ({
   children,
   order = false,
 }) => (
-  <Main>
+  <Main login>
     <div className="lg:flex w-full lg:justify-center ">
       <div className="lg:flex">
         <div

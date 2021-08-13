@@ -1,4 +1,5 @@
 import { ChangeEvent } from "react";
+import { RegisterOptions } from "react-hook-form";
 
 export interface InputI {
   type: "password" | "email" | "text";
@@ -6,6 +7,8 @@ export interface InputI {
   label: string;
   autocomplete?: boolean;
   classnames?: string;
+  options?: RegisterOptions;
+  message: string;
 }
 
 export interface InputHandler extends InputI {
