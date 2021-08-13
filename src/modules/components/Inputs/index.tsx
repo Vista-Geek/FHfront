@@ -1,30 +1,38 @@
-import React from "react";
-import { InputHandler } from "@interfaces/Form.interface";
+import React, { InputHTMLAttributes } from "react";
+import { UseFormRegister } from "react-hook-form";
 
-const Input: React.FC<InputHandler> = ({
-  type,
-  id,
-  label,
-  autocomplete = false,
-  classnames = "w-10/12",
-  HandleInputChange,
-  value,
-}) => (
-  <div className={`flex flex-col m-auto mt-4 text-left ${classnames}`}>
-    <label htmlFor={id} className="mb-1">
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+  label: string;
+  id: string;
+  classnames?: string;
+  message: string;
+  fieldError: string;
+};
+interface IFormValues {
+  name: string;
+  password: string;
+}
+
+const InputComponent = React.forwardRef<
+  HTMLInputElement,
+  InputProps & ReturnType<UseFormRegister<IFormValues>>
+>(({ id, label, message, fieldError, ...props }, ref) => (
+  <div className={`flex flex-col m-auto mt-4 text-left `}>
+    <label htmlFor={id} className="mb-1 capitalize">
       {label}
     </label>
     <input
-      type={type}
+      {...props}
+      ref={ref}
       placeholder={label}
-      name={id}
-      id={id}
-      onChange={HandleInputChange}
-      value={value}
+      type="text"
       className="custom-input form-input transition-all"
-      autoComplete={autocomplete ? "on" : "off"}
+      /* autoComplete={autocomplete ? "on" : "off"} */
     />
+    {fieldError && <small className="text-red-500 mt-2">{message}</small>}
   </div>
-);
+));
 
-export default Input;
+InputComponent.displayName = "InputComponent";
+
+export default InputComponent;

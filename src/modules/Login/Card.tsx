@@ -15,11 +15,11 @@ const Card: React.FC<CardProps> = ({ label, authMode }) => {
   return (
     <div className="bg-purpleCust-dark w-full min-h-380 mt-5 rounded-card text-center py-4 sm:w-96">
       <Head>
-        <title>FantasyHouse | {label}</title>
+        <title>FantasyHouse | Log In</title>
       </Head>
       <Logo position="justify-center" text="text-3xl" width={50} height={50} />
       <p className="mt-4">
-        <span className="text-xl">{label}</span>
+        <span className="text-xl">Log In</span>
       </p>
       <Form
         InfoForm={AuthData}
