@@ -1,3 +1,7 @@
 import Profile from "@modules/Profile";
+import React from "react";
 
-export default Profile;
+const ProfilePage = () => <Profile />;
+
+ProfilePage.auth = true;
+export default ProfilePage;

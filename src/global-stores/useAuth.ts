@@ -1,7 +1,7 @@
-import { combine, devtools } from "zustand/middleware";
+import { combine, devtools, persist } from "zustand/middleware";
 import create from "zustand";
 import { toast } from "react-toastify";
-import { LoginData } from "@interfaces/auth.response";
+import { LoginData, User } from "@interfaces/auth.response";
 import {
   checkUserLogged,
   login,
@@ -9,18 +9,6 @@ import {
   setTokenApi,
 } from "src/services/auth.service";
 
-export interface User {
-  discord: boolean;
-  idDiscord: string;
-  rol: string;
-  _id: string;
-  name: string;
-  lastname: string;
-  email: string;
-  nickname: string;
-  worldName: string;
-  FFXIVCharacter: string;
-}
 const userData: User | null = null;
 const redirectKey = "@fh/redirect";
 /* auth helpers */
@@ -37,58 +25,73 @@ export function clearRedirect() {
   return window.sessionStorage.removeItem(redirectKey);
 }
 
+interface AuthStateI {
+  userData: User | null;
+  auth: boolean;
+  checking: boolean;
+}
+
+interface AuthMethods {
+  startAuth: (dataLogin: LoginData) => Promise<void>;
+  startLogout: () => void;
+  startChecking: () => void;
+}
+
 export const useAuth = create(
   devtools(
-    combine(
-      {
-        auth: false,
-        checking: false,
-        userData,
-      },
-      (set) => ({
-        startAuth: async (dataLogin: LoginData) => {
-          try {
-            const response = (await login(dataLogin)).data;
-            const { data } = response;
-            if (data) {
+    persist(
+      combine<AuthStateI, AuthMethods>(
+        {
+          auth: false,
+          checking: false,
+          userData,
+        },
+        (set) => ({
+          startAuth: async (dataLogin: LoginData) => {
+            try {
+              const response = (await login(dataLogin)).data.data;
+              console.log(response);
+              const { user } = response;
+
+              if (user) {
+                set((state) => ({
+                  ...state,
+                  auth: !state.auth,
+                  checking: false,
+                  userData: user,
+                }));
+                setTokenApi(response.token);
+              }
+            } catch (error) {
+              console.log("error in start Login", error);
+              toast.error("Incorrect Credentials");
+            }
+          },
+          startLogout: () => {
+            logout();
+            set((state) => ({ ...state, userData, auth: false }));
+          },
+          startChecking: () => {
+            const user = checkUserLogged();
+            if (user) {
               set((state) => ({
                 ...state,
-                auth: !state.auth,
+                auth: true,
                 checking: false,
-                userData: null,
               }));
-              setTokenApi(data.token);
             } else {
-              toast.error("Unexpected Error");
+              set((state) => ({
+                ...state,
+                auth: false,
+                checking: false,
+              }));
             }
-          } catch (error) {
-            console.log("error in start Login");
-            toast.error("Unexpected error");
-          }
-        },
-        startLogout: () => {
-          logout();
-          set((state) => ({ ...state, userData, auth: false }));
-        },
-        startChecking: async () => {
-          const user = await checkUserLogged();
-          if (user) {
-            set((state) => ({
-              ...state,
-              auth: true,
-              checking: false,
-              userData,
-            }));
-          } else {
-            set((state) => ({
-              ...state,
-              auth: false,
-              checking: false,
-              userData,
-            }));
-          }
-        },
-      })
+          },
+        })
+      ),
+      {
+        name: "@fh/info",
+      }
     )
   )
 );

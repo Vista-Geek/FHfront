@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ButtonNavbar from "@components/Buttons/ButtonNavbar";
 import Navbar from "@components/Navbar/Navbar";
 import AuthContent from "./AuthContent";
 import Card from "./Card";
+import { useAuth } from "@global-stores/useAuth";
+import { useRouter } from "next/router";
 
-const index = () => {
+const Login = () => {
+  const { auth } = useAuth((state) => state);
+  const router = useRouter();
+  useEffect(() => {
+    if (auth) {
+      router.replace("/");
+    }
+  }, [auth, router]);
   return (
     <>
       <Navbar>
@@ -17,4 +26,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Login;

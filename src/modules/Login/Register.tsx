@@ -1,22 +1,31 @@
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
+import Head from "next/head";
 import ButtonNavbar from "@components/Buttons/ButtonNavbar";
 import Navbar from "@components/Navbar/Navbar";
-import React from "react";
 import Image from "next/image";
 import Button from "@components/Buttons/Button";
 import Form from "@components/Form/Form";
 import Logo from "@components/Logo";
-import Head from "next/head";
 import { AuthDataRegister } from "@data/auth.form";
 import Main from "@components/Main";
+import { useAuth } from "@global-stores/useAuth";
 
 const Register = () => {
+  const { auth } = useAuth((state) => state);
+  const router = useRouter();
+  useEffect(() => {
+    if (auth) {
+      router.replace("/");
+    }
+  }, [auth, router]);
   return (
     <>
       <Head>
         <title>FantasyHouse | Register</title>
       </Head>
       <Navbar>
-        <ButtonNavbar title="Register" href="/login" />
+        <ButtonNavbar title="Sign In" href="/login" />
       </Navbar>
       <Main login>
         <div className="my-12">

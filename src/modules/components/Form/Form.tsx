@@ -16,7 +16,7 @@ interface FormProps {
 
 const Form: React.FC<FormProps> = ({
   InfoForm,
-  handleSubmit: handleOnsubmir,
+  handleSubmit: handleOnsubmit,
   title,
   titleHidden,
   descHidden = false,
@@ -38,7 +38,7 @@ const Form: React.FC<FormProps> = ({
   } = useForm();
 
   const handleOnSubmit: SubmitHandler<KeysForm> = (e) => {
-    console.log(e);
+    handleOnsubmit(e);
   };
   return (
     <form className="px-2 font-herbo " onSubmit={handleSubmit(handleOnSubmit)}>

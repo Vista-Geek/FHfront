@@ -5,13 +5,18 @@ import Button from "@components/Buttons/Button";
 import Image from "next/image";
 import Form from "@components/Form/Form";
 import { AuthData } from "../../data/auth.form";
-
+import { useAuth } from "@global-stores/useAuth";
 interface CardProps {
   label: string;
   authMode: "Sign up" | "Log In";
 }
 
 const Card: React.FC<CardProps> = ({ label, authMode }) => {
+  const { startAuth } = useAuth((state) => state);
+  const handleSubmit = async (e: any) => {
+    console.log(e);
+    await startAuth({ ...e });
+  };
   return (
     <div className="bg-purpleCust-dark w-full min-h-380 mt-5 rounded-card text-center py-4 sm:w-96">
       <Head>
@@ -25,7 +30,7 @@ const Card: React.FC<CardProps> = ({ label, authMode }) => {
         InfoForm={AuthData}
         titleHidden
         descHidden
-        handleSubmit={(values) => console.log(values)}
+        handleSubmit={handleSubmit}
       >
         <div className="mt-8 ">
           <Button type="submit" width="w-6/12" classnames="bg-purpleCust">

@@ -1,14 +1,12 @@
-import Navbar from "@components/Navbar/Navbar";
 import React from "react";
 import CardProfile from "./CardProfile";
 import Tabs from "@components/Tabs/TabProfile";
 import EditProfile from "./EditProfile";
 import EditAccount from "./EditAccount";
-import MenuNavbar from "@components/Navbar/MenuNavbar";
 import Head from "next/head";
 import Layout from "@components/Layout/Layout";
 
-const index = () => {
+const Profile = () => {
   return (
     <>
       <Head>
@@ -31,4 +29,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Profile;

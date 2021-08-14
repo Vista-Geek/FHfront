@@ -22,13 +22,4 @@ export const setTokenApi = (token: string) => {
   }
 };
 
-export const checkUserLogged = async () => {
-  try {
-    const { data } = await Axios.post<LoginResponse>("/auth/renew-token");
-    setTokenApi(data.data.token);
-    return data.data.user;
-  } catch (error) {
-    console.log(error, "Error in CheckUserLogged");
-    return null;
-  }
-};
+export const checkUserLogged = () => !!localStorage.getItem(USERTOKEN);
