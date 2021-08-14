@@ -1,9 +1,13 @@
 import React from "react";
+import Head from "next/head";
+import Layout from "@components/Layout/Layout";
 import ProductCard from "@components/ProductCard";
-import fakeAvatar from "@images/fakeAvatar.png";
 import { ProductI } from "@interfaces/Product.interface";
 
-export default function CardsColumn() {
+// Development
+import fakeAvatar from "@images/fakeAvatar.png";
+
+export default function Favorites() {
   const fakeCard: ProductI[] = [
     {
       image: "/images/bg-image.png",
@@ -43,17 +47,25 @@ export default function CardsColumn() {
         stars: 3,
         avatar: fakeAvatar,
         discord: "Usuario#0000",
-        isAuthor: true,
+        isAuthor: false,
       },
       price: 16000000,
     },
   ];
-
   return (
-    <div className="mt-8">
-      {fakeCard.map((item, index) => (
-        <ProductCard key={index} {...item} />
-      ))}
-    </div>
+    <>
+      <Head>
+        <title>Favorites - FantasyHouse</title>
+      </Head>
+      <Layout>
+        <main className="pt-24">
+          <div className="min-w-[300px] max-w-[643px] mx-auto px-5">
+            {fakeCard.map((item, index) => (
+              <ProductCard key={index} {...item} />
+            ))}
+          </div>
+        </main>
+      </Layout>
+    </>
   );
 }
