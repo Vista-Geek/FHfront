@@ -59,7 +59,7 @@ export default function Favorites() {
       </Head>
       <Layout>
         <main className="pt-24">
-          <div className="w-[643px] mx-auto">
+          <div className="min-w-[300px] max-w-[643px] mx-auto px-5">
             {fakeCard.map((item, index) => (
               <ProductCard key={index} {...item} />
             ))}
