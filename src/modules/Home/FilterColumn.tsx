@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import IndividualFilterType from "@components/IndividualFilterType";
+import router from "next/router";
 
 export default function FilterColumn() {
+  const [objeto, setObjeto] = useState({});
+
+  useEffect(() => {
+    console.log(objeto);
+    router.push(
+      {
+        pathname: router.pathname,
+        query: objeto,
+      },
+      undefined,
+      {
+        // Hace que no se reinicie la página con cada cambio
+        shallow: true,
+      }
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [objeto]);
+
+  const handleObjeto = (nombreObjeto: string, nuevoObjeto: string[]) => {
+    setObjeto({
+      ...objeto,
+      [nombreObjeto]: nuevoObjeto.join(","),
+    });
+  };
+
   const serversNames = [
     "Balmung",
     "Brynhildr",
@@ -36,10 +62,30 @@ export default function FilterColumn() {
         <option>No filter</option>
       </select>
 
-      <IndividualFilterType filterTitle="Servers" filters={serversNames} />
-      <IndividualFilterType filterTitle="Ubication" filters={ubications} />
-      <IndividualFilterType filterTitle="Size" filters={size} />
-      <IndividualFilterType filterTitle="Type of Sale" filters={saleType} />
+      <IndividualFilterType
+        filterTitle="Servers"
+        apiFilterTitle="server"
+        filters={serversNames}
+        handleObjeto={handleObjeto}
+      />
+      <IndividualFilterType
+        filterTitle="Ubication"
+        apiFilterTitle="location"
+        filters={ubications}
+        handleObjeto={handleObjeto}
+      />
+      <IndividualFilterType
+        filterTitle="Size"
+        apiFilterTitle="size"
+        filters={size}
+        handleObjeto={handleObjeto}
+      />
+      <IndividualFilterType
+        filterTitle="Type of Sale"
+        apiFilterTitle="typeOfSale"
+        filters={saleType}
+        handleObjeto={handleObjeto}
+      />
     </div>
   );
 }
