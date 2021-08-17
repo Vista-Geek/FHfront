@@ -6,17 +6,17 @@ export const patternEmail =
 export const AuthData: FormI = [
   {
     type: "text",
-    label: "Username",
-    id: "username",
+    label: "email",
+    id: "email",
     options: {
       required: true,
-      minLength: 5,
+      pattern: patternEmail,
     },
-    message: "Provide a valid username",
+    message: "No valid Email Address",
   },
   {
     type: "password",
-    label: "Password",
+    label: "password",
     id: "password",
     options: {
       required: true,
