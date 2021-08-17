@@ -5,7 +5,7 @@ export const patternEmail =
 
 export const AuthData: FormI = [
   {
-    type: "text",
+    type: "email",
     label: "email",
     id: "email",
     options: {
@@ -49,7 +49,7 @@ export const AuthDataRegister: FormI = [
   },
   {
     type: "password",
-    label: "Password",
+    label: "password",
     id: "password",
     options: {
       required: true,
