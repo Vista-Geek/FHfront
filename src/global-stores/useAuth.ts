@@ -62,6 +62,7 @@ export const useAuth = create(
                 }));
                 setTokenApi(response.token);
               }
+              console.log(response);
             } catch (error) {
               console.log("error in start Login", error);
               toast.error("Incorrect Credentials");
@@ -70,10 +71,18 @@ export const useAuth = create(
           startRegister: async (dataRegister: RegisterData) => {
             try {
               const response = (await register(dataRegister)).data.data;
-              console.log(response);
+              const { user } = response;
+              if(user) {
+                set((state) => ({
+                  ...state,
+                  auth: !state.auth,
+                  checking: false,
+                  userData: user
+                }));
+                setTokenApi(response.token);
+              } 
             } catch(error) {
-              console.log("error in start Login", error);
-              toast.error("Missing data");
+              toast.error("Email duplicate");
             }
           },
           startLogout: () => {
