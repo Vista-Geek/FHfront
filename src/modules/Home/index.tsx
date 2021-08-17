@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import FilterColumn from "./FilterColumn";
 import CardsColumn from "./CardsColumn";
 import GlobalNavbar from "@components/Navbar/GlobalNavbar";
 import DiscordBanner from "@components/Banner/DiscordBanner";
 import Layout from "@components/Layout/Layout";
 
+import { useHouses } from "@global-stores/useHouses";
+
 export default function Home() {
+  const { getHouses, filter } = useHouses((state) => state);
+  const router = useRouter();
+  const { size, typeOfSale, server, location, dataCenter } = router.query;
+
+  useEffect(() => {
+    getHouses({
+      size: size?.toString(),
+      typeOfSale: typeOfSale?.toString(),
+      server: server?.toString(),
+      location: location?.toString(),
+      dataCenter: dataCenter?.toString(),
+    });
+  }, [getHouses, size, typeOfSale, server, location, dataCenter]);
+
+  // useEffect(() => {
+  //   getHouses(filter);
+  // }, [getHouses, filter]);
+
   return (
     <>
       <Head>
