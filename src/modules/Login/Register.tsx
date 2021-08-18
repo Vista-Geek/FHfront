@@ -21,7 +21,6 @@ const Register = () => {
   }, [auth, router]);
 
   const handleSubmit = async (e:any ) => {
-    console.log(e); 
     await startRegister({ ...e });
   }
   return (
