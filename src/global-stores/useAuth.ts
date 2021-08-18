@@ -62,10 +62,8 @@ export const useAuth = create(
                 }));
                 setTokenApi(response.token);
               }
-              console.log(response);
             } catch (error) {
-              console.log("error in start Login", error);
-              toast.error("Incorrect Credentials");
+              error.response ? toast.error(error.response?.data.msg) : toast.error('SERVER ERROR'); 
             }
           },
           startRegister: async (dataRegister: RegisterData) => {
@@ -82,7 +80,7 @@ export const useAuth = create(
                 setTokenApi(response.token);
               } 
             } catch(error) {
-              toast.error("Email duplicate");
+              error.response ? toast.error(error.response?.data.msg) : toast.error('SERVER ERROR'); 
             }
           },
           startLogout: () => {
