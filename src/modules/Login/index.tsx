@@ -11,7 +11,7 @@ const Login = () => {
   const router = useRouter();
   useEffect(() => {
     if (auth) {
-      router.replace("/");
+      router.replace("/home");
     }
   }, [auth, router]);
   return (
