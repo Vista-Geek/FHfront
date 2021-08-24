@@ -63,24 +63,28 @@ export const useAuth = create(
                 setTokenApi(response.token);
               }
             } catch (error) {
-              error.response ? toast.error(error.response?.data.msg) : toast.error('SERVER ERROR'); 
+              error.response
+                ? toast.error(error.response?.data.msg)
+                : toast.error("SERVER ERROR");
             }
           },
           startRegister: async (dataRegister: RegisterData) => {
             try {
               const response = (await register(dataRegister)).data.data;
               const { user } = response;
-              if(user) {
+              if (user) {
                 set((state) => ({
                   ...state,
                   auth: !state.auth,
                   checking: false,
-                  userData: user
+                  userData: user,
                 }));
                 setTokenApi(response.token);
-              } 
-            } catch(error) {
-              error.response ? toast.error(error.response?.data.msg) : toast.error('SERVER ERROR'); 
+              }
+            } catch (error) {
+              error.response
+                ? toast.error(error.response?.data.msg)
+                : toast.error("SERVER ERROR");
             }
           },
           startLogout: () => {

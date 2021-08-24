@@ -13,6 +13,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ label, authMode }) => {
   const { startAuth } = useAuth((state) => state);
+
   const handleSubmit = async (e: any) => {
     await startAuth({ ...e });
   };

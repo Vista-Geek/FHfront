@@ -25,7 +25,6 @@ const InputComponent = React.forwardRef<
       {...props}
       ref={ref}
       placeholder={label}
-      type="text"
       className="custom-input form-input transition-all"
       /* autoComplete={autocomplete ? "on" : "off"} */
     />

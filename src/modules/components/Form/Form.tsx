@@ -56,6 +56,7 @@ const Form: React.FC<FormProps> = ({
               {...register(input.label, input.options)}
               message={input.message}
               fieldError={errors[input.label]}
+              type={input.type}
             />
           </div>
         ))}

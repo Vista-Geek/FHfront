@@ -20,9 +20,9 @@ const Register = () => {
     }
   }, [auth, router]);
 
-  const handleSubmit = async (e:any ) => {
+  const handleSubmit = async (e: any) => {
     await startRegister({ ...e });
-  }
+  };
   return (
     <>
       <Head>
