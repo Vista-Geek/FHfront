@@ -10,6 +10,7 @@
     "format": "npx prettier --write src"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.0",
     "@tailwindcss/forms": "^0.3.3",
     "axios": "^0.21.1",
     "beauty-stars": "^1.1.0",
@@ -20,6 +21,7 @@
     "react-hook-form": "^7.12.2",
     "react-icons": "^4.2.0",
     "react-image-gallery": "^1.2.4",
+    "react-modal": "^3.14.3",
     "react-toastify": "^7.0.4",
     "zustand": "^3.5.7"
   },
