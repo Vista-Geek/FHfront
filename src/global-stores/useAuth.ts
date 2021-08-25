@@ -1,11 +1,12 @@
 import { combine, devtools, persist } from "zustand/middleware";
 import create from "zustand";
 import { toast } from "react-toastify";
-import { LoginData, User } from "@interfaces/auth.response";
+import { LoginData, RegisterData, User } from "@interfaces/auth.response";
 import {
   checkUserLogged,
   login,
   logout,
+  register,
   setTokenApi,
 } from "src/services/auth.service";
 
@@ -33,6 +34,7 @@ interface AuthStateI {
 
 interface AuthMethods {
   startAuth: (dataLogin: LoginData) => Promise<void>;
+  startRegister: (dataRegister: RegisterData) => Promise<void>;
   startLogout: () => void;
   startChecking: () => void;
   updateUserData: () => void;
@@ -51,9 +53,7 @@ export const useAuth = create(
           startAuth: async (dataLogin: LoginData) => {
             try {
               const response = (await login(dataLogin)).data.data;
-              console.log(response);
               const { user } = response;
-
               if (user) {
                 set((state) => ({
                   ...state,
@@ -64,8 +64,28 @@ export const useAuth = create(
                 setTokenApi(response.token);
               }
             } catch (error) {
-              console.log("error in start Login", error);
-              toast.error("Incorrect Credentials");
+              error.response
+                ? toast.error(error.response?.data.msg)
+                : toast.error("SERVER ERROR");
+            }
+          },
+          startRegister: async (dataRegister: RegisterData) => {
+            try {
+              const response = (await register(dataRegister)).data.data;
+              const { user } = response;
+              if (user) {
+                set((state) => ({
+                  ...state,
+                  auth: !state.auth,
+                  checking: false,
+                  userData: user,
+                }));
+                setTokenApi(response.token);
+              }
+            } catch (error) {
+              error.response
+                ? toast.error(error.response?.data.msg)
+                : toast.error("SERVER ERROR");
             }
           },
           startLogout: () => {

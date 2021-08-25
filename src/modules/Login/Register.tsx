@@ -12,13 +12,17 @@ import Main from "@components/Main";
 import { useAuth } from "@global-stores/useAuth";
 
 const Register = () => {
-  const { auth } = useAuth((state) => state);
+  const { auth, startRegister } = useAuth((state) => state);
   const router = useRouter();
   useEffect(() => {
     if (auth) {
       router.replace("/");
     }
   }, [auth, router]);
+
+  const handleSubmit = async (e: any) => {
+    await startRegister({ ...e });
+  };
   return (
     <>
       <Head>
@@ -45,7 +49,7 @@ const Register = () => {
                   InfoForm={AuthDataRegister}
                   titleHidden
                   descHidden
-                  handleSubmit={(values) => console.log(values)}
+                  handleSubmit={handleSubmit}
                   registerC
                 >
                   <div className="mt-8 ">

@@ -22,7 +22,7 @@
       "@hooks/*": ["./src/hooks/*"],
       "@data/*": ["./src/data/*"],
       "@global-stores/*": ["./src/global-stores/*"],
-      "@utils/*": ["./src/utils/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.jsx", "**/*.js", "src/modules/Profile/ProfileForm.tsx"],
