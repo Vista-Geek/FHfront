@@ -4,7 +4,7 @@ import { LoginResponse, LoginData } from "@interfaces/auth.response";
 import { getToken, USERTOKEN } from "@utils/localStorageItems";
 
 export const login = async (credential: LoginData) =>
-  await Axios.post<LoginResponse>(`/auth/login`, credential);
+  await Axios.post<LoginResponse>(`/auth/login/`, credential);
 
 export const logout = () => {
   try {
