@@ -112,8 +112,8 @@ body,
 }
 
 /* inputs */
-.input-sells{
-  @apply shadow appearance-none border rounded w-full py-2 px-3 bg-purpleCust-bg sm:bg-purpleCust-dark text-white leading-tight border-purpleCust focus:border-purpleCust focus:outline-none; 
+.input-sells {
+  @apply shadow appearance-none border rounded w-full py-2 px-3 bg-purpleCust-bg sm:bg-purpleCust-dark text-white leading-tight border-purpleCust focus:border-purpleCust focus:outline-none;
 }
 
 /* Flag Sharp (<Sell/>) */
@@ -140,4 +140,26 @@ body,
   position: absolute;
   bottom: -24px;
   width: 0;
+}
+
+.inputPassWithEye {
+  display: flex;
+  min-width: 100%;
+  height: 100%;
+  border: "10px solid blue";
+}
+
+.inputPassWithEye input {
+  height: 100%;
+  width: 100%;
+}
+
+.eyeIcon {
+  margin-left: 10px;
+  font-size: 1rem;
+  transition: 0.5s all;
+}
+
+.eyeIcon:hover {
+  color: var(--purple-text);
 }
