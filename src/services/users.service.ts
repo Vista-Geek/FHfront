@@ -17,10 +17,26 @@ export const getUsers = async () => {
 };
 
 export const getUserById = async (id: string) => {
+  const localToken = await getToken();
   try {
     const { data } = await Axios.get<SingleUser>(`/users/${id}`, {
       headers: {
-        Authorization: getToken(),
+        Authorization: localToken,
+      },
+    });
+    return data;
+  } catch (error) {
+    console.log("Error obtaining Single User");
+    return null;
+  }
+};
+
+export const putProfileInfo = async (userId: string, payload: any) => {
+  const localToken = await getToken();
+  try {
+    const { data } = await Axios.put<SingleUser>(`/users/${userId}`, payload, {
+      headers: {
+        Authorization: localToken,
       },
     });
     return data;
