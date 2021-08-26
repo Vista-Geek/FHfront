@@ -1,7 +1,7 @@
 import Modal from "react-modal";
 import React, { useState } from "react";
 import { useAuth } from "@global-stores/useAuth";
-import { putProfileInfo } from "src/services/users.service";
+import { editProfileUse } from "src/services/users.service";
 import ProfileForm from "./Forms/ProfileForm";
 
 const customStyles = {
@@ -17,7 +17,7 @@ const customStyles = {
 };
 
 const Edit = () => {
-  const { updateUserData } = useAuth((state) => state);
+  const { userData, updateUserData } = useAuth((state) => state);
   const [modalIsOpen, setIsOpen] = useState(false);
   function openModal() {
     setIsOpen(true);
@@ -25,10 +25,9 @@ const Edit = () => {
   function closeModal() {
     setIsOpen(false);
   }
-  const { userData } = useAuth((state) => state);
 
   const onSubmit = async (data) => {
-    const res = await putProfileInfo(userData?._id, data);
+    const res = await editProfileUse(userData?._id, data);
     if (res.status === 200) {
       updateUserData(res.data);
       openModal();
