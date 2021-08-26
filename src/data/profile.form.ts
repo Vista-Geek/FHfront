@@ -65,3 +65,21 @@ export const ChangePassowrd: FormI = [
     classnames: "",
   },
 ];
+
+export type UpdateProfileForm = {
+  nickname: string;
+  email: string;
+  FFXIVCharacter: string;
+  worldName: string;
+  idDiscord: string;
+};
+
+export type UpdateUsernameForm = {
+  nickname: string;
+};
+
+export type UpdatePasswordForm = {
+  password: string;
+  newPassword: string;
+  confirm: string;
+};

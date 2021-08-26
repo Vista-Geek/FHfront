@@ -37,6 +37,7 @@ interface AuthMethods {
   startRegister: (dataRegister: RegisterData) => Promise<void>;
   startLogout: () => void;
   startChecking: () => void;
+  updateUserData: () => void;
 }
 
 export const useAuth = create(
@@ -106,6 +107,12 @@ export const useAuth = create(
                 checking: false,
               }));
             }
+          },
+          updateUserData: (payload) => {
+            set((state) => ({
+              ...state,
+              userData: payload,
+            }));
           },
         })
       ),

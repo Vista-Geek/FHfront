@@ -1,4 +1,13 @@
 export const USERTOKEN = "@fh/token";
 
-export const getToken = (token?: string) =>
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImRpc2NvcmQiOmZhbHNlLCJpZERpc2NvcmQiOiIiLCJyb2wiOiJVU0VSIiwiX2lkIjoiNjEwZDhjZTUwZWNjYTVjMjYyNzlkZmM4IiwibmFtZSI6IlRlc3QiLCJsYXN0bmFtZSI6IkRvcyIsImVtYWlsIjoidGVzdDJAZ21haWwuY29tIiwibmlja25hbWUiOiJUZXN0ZW8iLCJ3b3JsZE5hbWUiOiJOb21icmUgbXVuZG8iLCJGRlhJVkNoYXJhY3RlciI6ImpmZGtqMTIzMjEifSwiaWF0IjoxNjI4Mjc3OTg5LCJleHAiOjE2MjgzNjQzODl9.39NxYSLkQpkVLcR1U6cptESiMkfKr1HCZ7SNNy4GGkI";
+export const getToken = async () => {
+  if (typeof window !== "undefined") {
+    try {
+      const token = await localStorage.getItem(USERTOKEN);
+      return token;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  }
+};

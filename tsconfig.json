@@ -25,6 +25,6 @@
       "@utils/*": ["./src/utils/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.jsx", "**/*.js", "src/modules/Profile/ProfileForm.tsx"],
   "exclude": ["node_modules"]
 }

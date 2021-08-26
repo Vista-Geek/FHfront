@@ -5,6 +5,8 @@ interface ButtonProps {
   width: string;
   title?: string;
   rounded?: "rounded-fh" | "rounded";
+  disabled?: boolean;
+  cursor?: string | "default";
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -14,8 +16,15 @@ const Button: React.FC<ButtonProps> = ({
   width = "",
   title,
   rounded = "rounded-fh",
+  disabled,
+  cursor,
 }) => (
-  <button type={type} className={`h-10 ${rounded} ${classnames} ${width}`}>
+  <button
+    disabled={disabled}
+    type={type}
+    style={{ cursor: cursor }}
+    className={`h-10 ${rounded} ${classnames} ${width}`}
+  >
     {title ? title : children}
   </button>
 );
