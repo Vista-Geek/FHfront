@@ -17,11 +17,11 @@ export const getUsers = async () => {
 };
 
 export const getUserById = async (id: string) => {
-  const localToken = await getToken();
   try {
+    const localToken = await getToken();
     const { data } = await Axios.get<SingleUser>(`/users/${id}`, {
       headers: {
-        Authorization: localToken,
+        Authorization: `Bearer ${localToken}`,
       },
     });
     return data;
@@ -31,40 +31,27 @@ export const getUserById = async (id: string) => {
   }
 };
 
-export const putProfileInfo = async (userId: string, payload: any) => {
-  const localToken = await getToken();
+export const editProfileUse = async (userId: string, user: SingleUser) => {
   try {
-    const { data } = await Axios.put<SingleUser>(`/users/${userId}`, payload, {
+    const localToken = await getToken();
+    const { data } = await Axios.put<SingleUser>(`/users/${userId}`, user, {
       headers: {
-        Authorization: localToken,
+        Authorization: `Bearer ${localToken}`,
       },
     });
     return data;
   } catch (error) {
-    console.log("Error obtaining Single User");
-    return null;
-  }
-};
-
-export const editProfileUse = async (id: string, user: SingleUser) => {
-  try {
-    const { data } = await Axios.put<SingleUser>(`/users/${id}`, user, {
-      headers: {
-        Authorization: getToken(),
-      },
-    });
-    return data;
-  } catch (error) {
-    console.log("Error obtaining Single User");
+    console.log("Error editing Single User");
     return null;
   }
 };
 
 export const deleteProfileUse = async (id: string) => {
   try {
+    const localToken = await getToken();
     const { data } = await Axios.delete<string>(`/users/${id}`, {
       headers: {
-        Authorization: getToken(),
+        Authorization: `Bearer ${localToken}`,
       },
     });
     return data;
