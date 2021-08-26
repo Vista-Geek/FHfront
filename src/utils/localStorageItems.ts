@@ -2,7 +2,12 @@ export const USERTOKEN = "@fh/token";
 
 export const getToken = async () => {
   if (typeof window !== "undefined") {
-    const res = await localStorage.getItem(USERTOKEN);
-    return res;
+    try {
+      const token = await localStorage.getItem(USERTOKEN);
+      return token;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
   }
 };
