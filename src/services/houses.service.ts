@@ -4,13 +4,14 @@ import {
   GetHouseByFilterParams,
   FilterResponseI,
 } from "../interfaces/Houses.interface";
-import { getToken, USERTOKEN } from "../utils/localStorageItems";
+import { getToken } from "../utils/localStorageItems";
 
 export const getHouses = async () => {
   try {
+    const localToken = await getToken();
     const { data } = await Axios.get<Houses>("/houses", {
       headers: {
-        Authorization: getToken(USERTOKEN),
+        Authorization: `Bearer ${localToken}`,
       },
     });
     return data;
@@ -22,9 +23,10 @@ export const getHouses = async () => {
 
 export const getHousesByFilter = async (filter: GetHouseByFilterParams) => {
   try {
+    const localToken = await getToken();
     const { data } = await Axios.get<FilterResponseI>(`/searches`, {
       headers: {
-        Authorization: getToken(USERTOKEN),
+        Authorization: `Bearer ${localToken}`,
       },
       params: filter,
     });
